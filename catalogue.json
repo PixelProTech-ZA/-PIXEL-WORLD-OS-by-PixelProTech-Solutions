@@ -1,0 +1,3280 @@
+[
+  {
+    "id": "alpine-linux",
+    "name": "Alpine Linux",
+    "official_name": "Alpine Linux",
+    "tagline": "Small. Simple. Secure.",
+    "family": "Linux / independent",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "None by default — commonly used headless; desktop possible but not the focus"
+    ],
+    "package_manager": "apk (Alpine Package Keeper)",
+    "filesystems": [
+      "ext4, others — user's choice"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM",
+      "others — widely used in containers across architectures"
+    ],
+    "hardware": {
+      "minimum": "~100MB RAM realistic for a minimal container/VM install",
+      "recommended": "Depends heavily on workload",
+      "laptop_suitability": "Possible but not a common desktop choice; uses musl libc, which some binary software doesn't expect",
+      "desktop_suitability": "Uncommon choice, more of a server/container base",
+      "old_pc_suitability": "Excellent for a minimal server role",
+      "server_suitability": "Excellent — extremely popular as a minimal Docker base image",
+      "gaming_suitability": "Poor — not the use case",
+      "education_suitability": "Good for learning musl libc and BusyBox-based minimal systems",
+      "known_trouble": "musl libc (instead of glibc) breaks some precompiled binary software that expects glibc"
+    },
+    "privacy_security_notes": "No telemetry; security-focused design (PaX/hardened toolchain heritage).",
+    "live_usb": "Yes",
+    "vm_support": "Yes — one of the most common base images for containers/VMs",
+    "installation_difficulty": "Moderate — simple but minimal text-based setup script",
+    "why_it_exists": "Built around musl libc and BusyBox to be as small and secure as possible, which made it hugely popular as the default base for many Docker images.",
+    "who_its_for": "Sysadmins and developers building minimal containers, VMs, or embedded systems.",
+    "what_makes_it_different": "musl libc + BusyBox core utilities keep the base image extremely small (a few MB), unlike most distros that use glibc + GNU coreutils.",
+    "links": {
+      "official_website": "https://www.alpinelinux.org/",
+      "download": "https://www.alpinelinux.org/downloads/",
+      "documentation": "https://wiki.alpinelinux.org/",
+      "installation_guide": "https://wiki.alpinelinux.org/wiki/Installation",
+      "release_notes": "https://wiki.alpinelinux.org/wiki/Release_Notes",
+      "source_repository": "https://gitlab.alpinelinux.org/",
+      "checksums": "SHA256/GPG signatures on downloads page",
+      "forums_community": "https://forum.alpinelinux.org/",
+      "mirrors": "https://mirrors.alpinelinux.org/"
+    },
+    "related_os": [],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "void-linux",
+      "tiny-core"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "antix",
+    "name": "antiX",
+    "official_name": "antiX Linux",
+    "tagline": "Fast, lightweight, systemd-free Linux for old and new machines.",
+    "family": "Linux / Debian family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "IceWM / fluxbox / window-manager based, no heavy DE"
+    ],
+    "package_manager": "APT (.deb)",
+    "filesystems": [
+      "ext4"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "i386 (strong 32-bit support)"
+    ],
+    "hardware": {
+      "minimum": "~256MB RAM claimed for the 'antiX-core' edition",
+      "recommended": "1GB RAM",
+      "laptop_suitability": "Good for older laptops specifically",
+      "desktop_suitability": "Good for minimalists",
+      "old_pc_suitability": "Excellent — explicitly designed for very old/low-resource hardware including 32-bit-only machines",
+      "server_suitability": "Not a typical use case",
+      "gaming_suitability": "Limited — not the focus, hardware too old in most antiX use cases",
+      "education_suitability": "Good for learning window managers instead of full desktop environments",
+      "known_trouble": "No systemd by design (uses SysVinit/runit) — some newer software assumes systemd and needs workarounds"
+    },
+    "privacy_security_notes": "No telemetry.",
+    "live_usb": "Yes, with persistence, a core strength",
+    "vm_support": "Yes",
+    "installation_difficulty": "Moderate — text-and-graphical installer, less polished than Ubuntu-style installers",
+    "why_it_exists": "Built specifically to keep very old PCs usable, deliberately systemd-free, based on Debian stable.",
+    "who_its_for": "People reviving genuinely old hardware (including 32-bit-only machines) who want a full but very light system.",
+    "what_makes_it_different": "No systemd anywhere in the distro, extremely low base requirements, and a strong live-USB-with-persistence toolset.",
+    "links": {
+      "official_website": "https://antixlinux.com/",
+      "download": "https://antixlinux.com/download/",
+      "documentation": "https://antixlinux.com/documentation/",
+      "installation_guide": "https://antixlinux.com/documentation/",
+      "release_notes": "https://antixlinux.com/category/news/",
+      "source_repository": "Not verified",
+      "checksums": "MD5/SHA checksums listed on download page",
+      "forums_community": "https://www.antixforum.com/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "mx-linux"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "mx-linux",
+      "tiny-core",
+      "puppy-linux"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "arch-linux",
+    "name": "Arch Linux",
+    "official_name": "Arch Linux",
+    "tagline": "Keep it simple.",
+    "family": "Linux / Arch family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Independent, community-run",
+    "desktop_environments": [
+      "None by default — user chooses/installs everything"
+    ],
+    "package_manager": "Pacman + AUR (community packages, unofficial)",
+    "filesystems": [
+      "ext4, Btrfs, XFS, ZFS (via AUR) — user's choice"
+    ],
+    "cpu_architectures": [
+      "x86_64 (officially); ARM via Arch Linux ARM, a related project"
+    ],
+    "hardware": {
+      "minimum": "~512MB RAM for a base install; practically more for a usable desktop",
+      "recommended": "Depends entirely on what you build on top",
+      "laptop_suitability": "Good, but the user configures Wi-Fi/power-management themselves",
+      "desktop_suitability": "Excellent for users who want full control",
+      "old_pc_suitability": "Good — you only install what you need, so it can be very lean",
+      "server_suitability": "Usable but Arch's rolling-release model isn't typical for production servers",
+      "gaming_suitability": "Very good — rolling release means very current Mesa/kernel/proprietary drivers",
+      "education_suitability": "Excellent for learning how Linux actually works, not recommended for absolute beginners",
+      "known_trouble": "Rolling release occasionally has breaking updates; requires reading update news before upgrading"
+    },
+    "privacy_security_notes": "No telemetry; security is the user's responsibility to configure.",
+    "live_usb": "Yes, minimal text-based installer image",
+    "vm_support": "Yes",
+    "installation_difficulty": "Hard — text-based, manual partitioning/bootloader/network setup (the official 'archinstall' script simplifies this)",
+    "why_it_exists": "Created 2002 around the principle of simplicity meaning 'no unnecessary additions or modifications' — you build the system from a minimal base yourself.",
+    "who_its_for": "Experienced Linux users who want to understand and control every part of their system.",
+    "what_makes_it_different": "Rolling release (no version numbers), minimalism, the huge community-maintained AUR package repository, and the Arch Wiki, widely used as a Linux reference even by non-Arch users.",
+    "links": {
+      "official_website": "https://archlinux.org/",
+      "download": "https://archlinux.org/download/",
+      "documentation": "https://wiki.archlinux.org/",
+      "installation_guide": "https://wiki.archlinux.org/title/Installation_guide",
+      "release_notes": "https://archlinux.org/news/",
+      "source_repository": "https://gitlab.archlinux.org/",
+      "checksums": "SHA256/PGP signatures listed on the download page",
+      "forums_community": "https://bbs.archlinux.org/",
+      "mirrors": "https://archlinux.org/mirrors/"
+    },
+    "related_os": [
+      "manjaro",
+      "endeavouros",
+      "artix-linux",
+      "cachyos"
+    ],
+    "predecessor": "",
+    "successor": "Manjaro, EndeavourOS, CachyOS, Artix are notable derivatives",
+    "alternatives": [
+      "gentoo",
+      "void-linux",
+      "nixos"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "artix-linux",
+    "name": "Artix Linux",
+    "official_name": "Artix Linux",
+    "tagline": "A rolling-release, systemd-free distribution based on Arch Linux.",
+    "family": "Linux / Arch family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "None by default — user chooses; Xfce/KDE/GNOME community installers available"
+    ],
+    "package_manager": "Pacman + AUR",
+    "filesystems": [
+      "User's choice"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "Similar to Arch — a lean base, more depends on what you install on top",
+      "recommended": "Depends heavily on chosen desktop/software",
+      "laptop_suitability": "Good once configured",
+      "desktop_suitability": "Good for advanced users",
+      "old_pc_suitability": "Good — minimal base like Arch",
+      "server_suitability": "Usable but rolling-release isn't typical for production",
+      "gaming_suitability": "Good — same package freshness as Arch",
+      "education_suitability": "Good for learning Arch-style package management with an alternative init system",
+      "known_trouble": "Smaller repo/testing surface than mainstream Arch; some AUR packages assume systemd and need adjustment"
+    },
+    "privacy_security_notes": "No telemetry.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Hard — similar manual process to Arch, with an init-system choice added",
+    "why_it_exists": "Built to bring Arch Linux's rolling-release model to users who want OpenRC, runit, or s6 instead of systemd.",
+    "who_its_for": "Advanced users who want Arch's package freshness and philosophy without systemd.",
+    "what_makes_it_different": "Same rolling Arch package base as vanilla Arch, but built around OpenRC/runit/s6 init systems instead of systemd.",
+    "links": {
+      "official_website": "https://artixlinux.org/",
+      "download": "https://artixlinux.org/download.php",
+      "documentation": "https://wiki.artixlinux.org/",
+      "installation_guide": "https://wiki.artixlinux.org/Main/Installation",
+      "release_notes": "https://artixlinux.org/news.php",
+      "source_repository": "https://gitea.artixlinux.org/",
+      "checksums": "Provided on the download page",
+      "forums_community": "https://forum.artixlinux.org/",
+      "mirrors": "https://artixlinux.org/download.php"
+    },
+    "related_os": [
+      "arch-linux",
+      "devuan",
+      "void-linux"
+    ],
+    "predecessor": "arch-linux",
+    "successor": "",
+    "alternatives": [
+      "void-linux",
+      "devuan"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "batocera",
+    "name": "Batocera.linux",
+    "official_name": "Batocera.linux",
+    "tagline": "The easiest way to turn a PC or SBC into a retro-gaming console.",
+    "family": "Linux / independent (retro-gaming appliance)",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "A dedicated EmulationStation-based console-style frontend, not a traditional desktop"
+    ],
+    "package_manager": "Not user-facing in the traditional sense — a purpose-built appliance image",
+    "filesystems": [
+      "Runs largely from a live/read-only image with a data partition for saves/ROMs"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM (many single-board computers including Raspberry Pi)"
+    ],
+    "hardware": {
+      "minimum": "Varies enormously — runs on Raspberry Pi boards up to full PCs",
+      "recommended": "Any moderately modern PC or supported SBC for smooth emulation of newer systems",
+      "laptop_suitability": "Usable but designed more for dedicated/appliance-style boxes",
+      "desktop_suitability": "Not a general desktop OS — a dedicated retro-gaming appliance",
+      "old_pc_suitability": "Good — old PCs can be great dedicated retro-gaming boxes",
+      "server_suitability": "Not applicable",
+      "gaming_suitability": "Excellent for its specific purpose: retro/emulated gaming",
+      "education_suitability": "Good for learning about emulation and appliance-style Linux images",
+      "known_trouble": "Not intended as a general-purpose desktop OS; emulator performance varies a lot by console generation and host hardware"
+    },
+    "privacy_security_notes": "No telemetry beyond typical network-update checks.",
+    "live_usb": "Yes — the primary way to run it, boots directly into the EmulationStation frontend",
+    "vm_support": "Limited — usually run on real/dedicated hardware for best emulator performance",
+    "installation_difficulty": "Easy — write the image to storage and boot; configuration is mostly done in the graphical frontend",
+    "why_it_exists": "Built to turn ordinary PCs or single-board computers into dedicated retro-gaming consoles with minimal setup.",
+    "who_its_for": "Retro-gaming enthusiasts wanting a plug-and-play emulation appliance rather than a general-purpose OS.",
+    "what_makes_it_different": "A purpose-built EmulationStation-based console interface rather than a general desktop, with support spanning from Raspberry Pi boards to full PCs.",
+    "links": {
+      "official_website": "https://batocera.org/",
+      "download": "https://batocera.org/download",
+      "documentation": "https://wiki.batocera.org/",
+      "installation_guide": "https://wiki.batocera.org/install",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/batocera-linux/batocera.linux",
+      "checksums": "Not verified",
+      "forums_community": "https://forum.batocera.org/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "libreelec"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "libreelec"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "bazzite",
+    "name": "Bazzite",
+    "official_name": "Bazzite",
+    "tagline": "The best way to game on Linux — and beyond.",
+    "family": "Linux / Fedora family (immutable)",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Community project (built on Fedora's uBlue/OSTree tooling)",
+    "desktop_environments": [
+      "KDE Plasma, GNOME, and a Steam Deck-like 'gaming mode' UI"
+    ],
+    "package_manager": "rpm-ostree (immutable, image-based) + Flatpak for apps",
+    "filesystems": [
+      "Btrfs (typical for the immutable image-based base)"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "4GB+ RAM realistic",
+      "recommended": "8GB+ RAM, discrete GPU for gaming",
+      "laptop_suitability": "Good, including handheld PCs (ROG Ally, Legion Go, etc.)",
+      "desktop_suitability": "Very good for gaming-focused desktop use",
+      "old_pc_suitability": "Poor — targets modern gaming hardware",
+      "server_suitability": "Not applicable",
+      "gaming_suitability": "Excellent — a primary focus, with Proton/emulation tooling preconfigured",
+      "education_suitability": "Moderate — a good example of immutable, image-based Linux distribution design",
+      "known_trouble": "Immutable filesystem model requires learning a different mental model (layering/rebasing) vs. traditional package installs"
+    },
+    "privacy_security_notes": "No unusual telemetry beyond what upstream Fedora/Steam components include.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy-moderate — graphical installer with sensible gaming-oriented defaults",
+    "why_it_exists": "Built on Fedora's OSTree/uBlue image-based tooling to give a SteamOS-like experience on a wide range of PCs and handhelds, not just Valve's own hardware.",
+    "who_its_for": "PC and handheld gamers wanting a SteamOS-like experience on non-Valve hardware.",
+    "what_makes_it_different": "Image-based, atomically-updated (rpm-ostree) system like SteamOS, but built to run on a much wider range of hardware including many gaming handhelds.",
+    "links": {
+      "official_website": "https://bazzite.gg/",
+      "download": "https://bazzite.gg/",
+      "documentation": "https://docs.bazzite.gg/",
+      "installation_guide": "https://docs.bazzite.gg/Installing_and_Traditional_Installation/",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/ublue-os/bazzite",
+      "checksums": "Not verified",
+      "forums_community": "https://discord.bazzite.gg/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "fedora",
+      "nobara",
+      "steamos"
+    ],
+    "predecessor": "fedora",
+    "successor": "",
+    "alternatives": [
+      "nobara",
+      "steamos"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "cachyos",
+    "name": "CachyOS",
+    "official_name": "CachyOS",
+    "tagline": "A performance-oriented Arch-based distribution.",
+    "family": "Linux / Arch family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux (custom performance-tuned kernel, e.g. linux-cachyos)",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "KDE Plasma, GNOME, Xfce, Hyprland and others via editions"
+    ],
+    "package_manager": "Pacman + AUR, with CachyOS's own optimized repos",
+    "filesystems": [
+      "Btrfs (default)",
+      "ext4"
+    ],
+    "cpu_architectures": [
+      "x86_64 with per-microarchitecture package optimization (x86-64-v3/v4)"
+    ],
+    "hardware": {
+      "minimum": "2GB RAM claimed minimum",
+      "recommended": "8GB+ RAM, modern CPU to benefit from optimized builds",
+      "laptop_suitability": "Good",
+      "desktop_suitability": "Very good, especially for gaming rigs",
+      "old_pc_suitability": "Weaker — optimizations target modern CPUs",
+      "server_suitability": "Not a typical use case",
+      "gaming_suitability": "Excellent — a primary focus, with performance-tuned kernel/scheduler",
+      "education_suitability": "Moderate; more useful once comfortable with Arch basics",
+      "known_trouble": "Smaller project than mainstream Arch derivatives; newer with a smaller support base"
+    },
+    "privacy_security_notes": "No telemetry by default.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Moderate — has a graphical Calamares-based installer",
+    "why_it_exists": "Built around CPU-optimized packages and a custom kernel/scheduler to squeeze extra performance out of Arch, particularly for gaming.",
+    "who_its_for": "Performance-focused users and gamers who want Arch with tuning done for them.",
+    "what_makes_it_different": "x86-64-v3/v4 optimized package repos and a custom scheduler-tuned kernel, distinguishing it from a 'generic' Arch build.",
+    "links": {
+      "official_website": "https://cachyos.org/",
+      "download": "https://cachyos.org/download/",
+      "documentation": "https://wiki.cachyos.org/",
+      "installation_guide": "https://wiki.cachyos.org/installation/install_guide/",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/CachyOS",
+      "checksums": "Not verified",
+      "forums_community": "https://discuss.cachyos.org/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "arch-linux"
+    ],
+    "predecessor": "arch-linux",
+    "successor": "",
+    "alternatives": [
+      "bazzite",
+      "nobara"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "debian",
+    "name": "Debian",
+    "official_name": "Debian GNU/Linux",
+    "tagline": "The universal operating system.",
+    "family": "Linux / Debian family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux (also has kFreeBSD/Hurd ports, non-mainstream)",
+    "foundation": "Debian Project (volunteer, non-commercial)",
+    "desktop_environments": [
+      "GNOME (default)",
+      "KDE Plasma",
+      "Xfce",
+      "LXQt",
+      "MATE",
+      "Cinnamon"
+    ],
+    "package_manager": "APT / dpkg (.deb)",
+    "filesystems": [
+      "ext4 (default)",
+      "Btrfs",
+      "XFS",
+      "ZFS (via contrib)"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "i386",
+      "ARM64",
+      "ARMhf",
+      "RISC-V (unofficial)",
+      "s390x",
+      "others"
+    ],
+    "hardware": {
+      "minimum": "~512MB RAM, 2GB disk for minimal install (text mode)",
+      "recommended": "2GB+ RAM, 10GB+ disk for a desktop install",
+      "laptop_suitability": "Good; broad hardware support, though very new laptop Wi-Fi/GPU chips can lag behind bleeding-edge distros",
+      "desktop_suitability": "Excellent — the base many other distros build on",
+      "old_pc_suitability": "Good with a lightweight DE (Xfce/LXQt) and the stable branch",
+      "server_suitability": "Excellent — a very common server base",
+      "gaming_suitability": "Workable but not gaming-focused; packages can be older on stable",
+      "education_suitability": "Good; used to teach core Linux/package-management concepts",
+      "known_trouble": "Very new hardware (recent GPUs/Wi-Fi) often needs backports or testing/unstable branches"
+    },
+    "privacy_security_notes": "No telemetry by default. Security team maintains the stable branch with backported fixes.",
+    "live_usb": "Yes — official live images exist for common desktop environments",
+    "vm_support": "Yes — widely used as a VM base",
+    "installation_difficulty": "Moderate — the graphical installer is beginner-friendly; expert/netinst modes are more advanced",
+    "why_it_exists": "Founded in 1993 as a non-commercial, community-governed distribution built entirely from free software, with a strong social contract.",
+    "who_its_for": "People who want a stable, well-documented base they can build anything on top of, from servers to desktops.",
+    "what_makes_it_different": "Strict adherence to free-software principles (Debian Free Software Guidelines), a rigorous release/testing process, and being the upstream base for Ubuntu, Mint, MX Linux, and many others.",
+    "links": {
+      "official_website": "https://www.debian.org/",
+      "download": "https://www.debian.org/distrib/",
+      "documentation": "https://www.debian.org/doc/",
+      "installation_guide": "https://www.debian.org/releases/stable/installmanual",
+      "release_notes": "https://www.debian.org/releases/stable/releasenotes",
+      "source_repository": "https://salsa.debian.org/",
+      "checksums": "SHA256SUMS provided alongside ISO downloads on debian.org",
+      "forums_community": "https://www.debian.org/support",
+      "mirrors": "https://www.debian.org/mirror/list"
+    },
+    "related_os": [
+      "ubuntu",
+      "linux-mint",
+      "mx-linux",
+      "devuan"
+    ],
+    "predecessor": "",
+    "successor": "Ubuntu, Linux Mint, MX Linux, and many others are downstream derivatives",
+    "alternatives": [
+      "fedora",
+      "opensuse",
+      "void-linux"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "devuan",
+    "name": "Devuan",
+    "official_name": "Devuan GNU+Linux",
+    "tagline": "Init freedom. A fork of Debian without systemd.",
+    "family": "Linux / Debian family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Devuan community",
+    "desktop_environments": [
+      "Xfce (flagship)",
+      "KDE Plasma, MATE, Cinnamon, and others available"
+    ],
+    "package_manager": "APT (.deb)",
+    "filesystems": [
+      "ext4"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "i386",
+      "ARM",
+      "others (mirrors Debian's architecture breadth)"
+    ],
+    "hardware": {
+      "minimum": "Similar to Debian — ~512MB RAM for a minimal base",
+      "recommended": "2GB+ RAM for a desktop",
+      "laptop_suitability": "Good, inherits Debian's hardware support",
+      "desktop_suitability": "Good for users specifically wanting a non-systemd Debian-based system",
+      "old_pc_suitability": "Good with a lightweight DE",
+      "server_suitability": "Good, particularly for admins preferring SysVinit/OpenRC",
+      "gaming_suitability": "Moderate, similar to Debian",
+      "education_suitability": "Good for learning alternative init systems",
+      "known_trouble": "Smaller community/package testing surface than Debian itself; some newer software increasingly assumes systemd"
+    },
+    "privacy_security_notes": "No telemetry.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Moderate — Debian-derived installer",
+    "why_it_exists": "Forked from Debian in 2014 specifically in response to Debian's adoption of systemd as its default init system, preserving a choice of init systems (SysVinit, OpenRC, runit).",
+    "who_its_for": "Users who specifically want a Debian-based system without systemd.",
+    "what_makes_it_different": "The entire reason for the fork: providing 'init freedom' — SysVinit and other init systems as first-class options instead of systemd.",
+    "links": {
+      "official_website": "https://www.devuan.org/",
+      "download": "https://www.devuan.org/os/download",
+      "documentation": "https://www.devuan.org/os/documentation",
+      "installation_guide": "https://www.devuan.org/os/documentation",
+      "release_notes": "Not verified",
+      "source_repository": "https://git.devuan.org/",
+      "checksums": "Provided on the download page",
+      "forums_community": "https://devuan.org/os/community",
+      "mirrors": "https://www.devuan.org/get-devuan"
+    },
+    "related_os": [
+      "debian",
+      "artix-linux"
+    ],
+    "predecessor": "debian",
+    "successor": "",
+    "alternatives": [
+      "artix-linux",
+      "void-linux"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "endeavouros",
+    "name": "EndeavourOS",
+    "official_name": "EndeavourOS",
+    "tagline": "A terminal-centric distro without all the complexity.",
+    "family": "Linux / Arch family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "Xfce (default live ISO)",
+      "installable: KDE Plasma, GNOME, i3, and more via online installer"
+    ],
+    "package_manager": "Pacman + AUR",
+    "filesystems": [
+      "ext4, Btrfs — user's choice"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "1.5GB RAM, 15GB disk (official minimum)",
+      "recommended": "4GB+ RAM",
+      "laptop_suitability": "Good",
+      "desktop_suitability": "Very good",
+      "old_pc_suitability": "Moderate, depends on chosen desktop",
+      "server_suitability": "Not a typical use case",
+      "gaming_suitability": "Very good — near-vanilla Arch repos",
+      "education_suitability": "Good stepping stone toward vanilla Arch",
+      "known_trouble": "Rolling release; inherits standard Arch update-breakage risk"
+    },
+    "privacy_security_notes": "No telemetry.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Moderate — Calamares offline installer or a guided online installer that mirrors Arch's manual steps",
+    "why_it_exists": "Created 2019 after the popular Arch-based distro Antergos shut down, aiming to stay closer to 'vanilla' Arch than Manjaro does.",
+    "who_its_for": "Users who want an Arch base with less manual setup but minimal deviation from upstream Arch.",
+    "what_makes_it_different": "No custom repos layered on top of Arch's own (unlike Manjaro); ships almost pure Arch packages with a friendlier installer.",
+    "links": {
+      "official_website": "https://endeavouros.com/",
+      "download": "https://endeavouros.com/latest-release/",
+      "documentation": "https://discovery.endeavouros.com/",
+      "installation_guide": "https://discovery.endeavouros.com/installation/",
+      "release_notes": "https://endeavouros.com/news/",
+      "source_repository": "https://github.com/endeavouros-team",
+      "checksums": "Provided on the download page",
+      "forums_community": "https://forum.endeavouros.com/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "arch-linux",
+      "manjaro"
+    ],
+    "predecessor": "arch-linux",
+    "successor": "",
+    "alternatives": [
+      "manjaro",
+      "cachyos"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "fedora",
+    "name": "Fedora",
+    "official_name": "Fedora Linux",
+    "tagline": "Freedom, friends, features, first.",
+    "family": "Linux / Red Hat family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Fedora Project, sponsored by Red Hat/IBM",
+    "desktop_environments": [
+      "GNOME (default 'Workstation')",
+      "KDE Plasma",
+      "Xfce",
+      "others via spins"
+    ],
+    "package_manager": "DNF (RPM)",
+    "filesystems": [
+      "Btrfs (default since Fedora 33)",
+      "ext4"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM64",
+      "others"
+    ],
+    "hardware": {
+      "minimum": "~2GB RAM, 15GB disk (bare minimum for install)",
+      "recommended": "4GB+ RAM, SSD",
+      "laptop_suitability": "Very good, especially on newer hardware — Fedora often ships very recent kernels",
+      "desktop_suitability": "Excellent, favored by many developers",
+      "old_pc_suitability": "Weaker than lightweight distros; consider a spin with Xfce/LXQt",
+      "server_suitability": "Good; CentOS Stream/RHEL derive from the same lineage for production",
+      "gaming_suitability": "Good, current kernel/Mesa helps with newer GPUs",
+      "education_suitability": "Good for learning current upstream Linux practices",
+      "known_trouble": "Fast release cadence (~every 6 months, ~13 months support) means more frequent upgrades"
+    },
+    "privacy_security_notes": "No telemetry by default; SELinux enabled by default for hardened security.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Moderate — Anaconda installer is capable but has more options than Ubuntu's",
+    "why_it_exists": "Community distribution acting as the upstream proving ground for technologies that later appear in Red Hat Enterprise Linux.",
+    "who_its_for": "Developers and users who want a cutting-edge but still stable, upstream-first Linux experience.",
+    "what_makes_it_different": "Ships very current software and kernels, strict adherence to only free/open-source software in the main repos, SELinux on by default.",
+    "links": {
+      "official_website": "https://fedoraproject.org/",
+      "download": "https://fedoraproject.org/workstation/download",
+      "documentation": "https://docs.fedoraproject.org/",
+      "installation_guide": "https://docs.fedoraproject.org/en-US/fedora/latest/install-guide/",
+      "release_notes": "https://docs.fedoraproject.org/en-US/releases/",
+      "source_repository": "https://src.fedoraproject.org/",
+      "checksums": "CHECKSUM files published alongside ISOs on the download page",
+      "forums_community": "https://discussion.fedoraproject.org/",
+      "mirrors": "https://mirrors.fedoraproject.org/"
+    },
+    "related_os": [
+      "centos-stream",
+      "rhel"
+    ],
+    "predecessor": "",
+    "successor": "Upstream for CentOS Stream / RHEL",
+    "alternatives": [
+      "opensuse",
+      "debian",
+      "arch-linux"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "freebsd",
+    "name": "FreeBSD",
+    "official_name": "FreeBSD",
+    "tagline": "The power to serve.",
+    "family": "BSD",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "FreeBSD kernel (BSD lineage, not Linux)",
+    "foundation": "FreeBSD Foundation + community",
+    "desktop_environments": [
+      "None by default; installable: GNOME, KDE Plasma, Xfce, and others"
+    ],
+    "package_manager": "pkg (binary) + Ports collection (source-based)",
+    "filesystems": [
+      "ZFS (excellent native support, a major strength)",
+      "UFS (default on some installs)"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM64",
+      "others"
+    ],
+    "hardware": {
+      "minimum": "~1GB RAM realistic for a base install",
+      "recommended": "2GB+ RAM, more for ZFS-heavy workloads",
+      "laptop_suitability": "Moderate — improving, but generally narrower Wi-Fi/GPU support than Linux",
+      "desktop_suitability": "Good with effort; not as plug-and-play as Linux desktops for laptops specifically",
+      "old_pc_suitability": "Good for server-style old-hardware use",
+      "server_suitability": "Excellent — long track record in networking/storage appliances and servers, strong ZFS support",
+      "gaming_suitability": "Limited native support; some success via Linux compatibility layer for older titles",
+      "education_suitability": "Excellent for learning the BSD lineage, ZFS, and jails (BSD's lightweight virtualization)",
+      "known_trouble": "Laptop Wi-Fi chipset support is narrower than Linux; check hardware notes before committing a laptop"
+    },
+    "privacy_security_notes": "No telemetry; the whole OS (kernel + userland) is maintained as one coherent project, unlike Linux distros combining separately-developed pieces.",
+    "live_usb": "Yes",
+    "vm_support": "Yes, widely used in VMs and as a hypervisor host (bhyve)",
+    "installation_difficulty": "Moderate — text-based bsdinstall is capable but assumes more familiarity than Ubuntu-style installers",
+    "why_it_exists": "Descended from the Berkeley Software Distribution (BSD) Unix lineage, developed as one coherent, unified OS project (kernel + userland together) rather than a kernel with distro-assembled userland like Linux.",
+    "who_its_for": "Sysadmins and server operators wanting rock-solid networking/storage (ZFS), and anyone wanting to explore the BSD design philosophy.",
+    "what_makes_it_different": "Whole-OS (not just-a-kernel) development model, jails for lightweight containerization, and industry-leading native ZFS integration.",
+    "links": {
+      "official_website": "https://www.freebsd.org/",
+      "download": "https://www.freebsd.org/where/",
+      "documentation": "https://docs.freebsd.org/en/books/handbook/",
+      "installation_guide": "https://docs.freebsd.org/en/books/handbook/bsdinstall/",
+      "release_notes": "https://www.freebsd.org/releases/",
+      "source_repository": "https://cgit.freebsd.org/",
+      "checksums": "SHA256/SHA512 CHECKSUM files published with every release",
+      "forums_community": "https://forums.freebsd.org/",
+      "mirrors": "https://www.freebsd.org/where/#mirrors"
+    },
+    "related_os": [
+      "ghostbsd",
+      "openbsd",
+      "netbsd",
+      "truenas"
+    ],
+    "predecessor": "",
+    "successor": "GhostBSD, TrueNAS, pfSense are notable derivatives",
+    "alternatives": [
+      "openbsd",
+      "netbsd",
+      "ghostbsd"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "freedos",
+    "name": "FreeDOS",
+    "official_name": "FreeDOS",
+    "tagline": "An open source DOS-compatible operating system.",
+    "family": "DOS",
+    "status": "ACTIVE",
+    "status_note": "Actively maintained but serves a niche, legacy-software-compatible purpose",
+    "kernel": "FreeDOS kernel (not Linux — a DOS-compatible kernel)",
+    "foundation": "FreeDOS Project (community)",
+    "desktop_environments": [
+      "Text-mode, command-line based; no GUI desktop by default"
+    ],
+    "package_manager": "FDIMPLES / FreeDOS package system",
+    "filesystems": [
+      "FAT12/16/32"
+    ],
+    "cpu_architectures": [
+      "x86 (16-bit and 32-bit real/protected mode)"
+    ],
+    "hardware": {
+      "minimum": "Extremely low — runs on original PC-class hardware (a few MB RAM)",
+      "recommended": "Any x86 PC, virtual machine, or even some UEFI systems via CSM/legacy boot",
+      "laptop_suitability": "Only relevant for legacy/retro use cases, not modern laptop hardware/drivers",
+      "desktop_suitability": "Niche — used for running legacy DOS software, BIOS flashing utilities, and retro computing",
+      "old_pc_suitability": "Excellent — designed to run on genuinely old PC hardware",
+      "server_suitability": "Not applicable",
+      "gaming_suitability": "Good for retro DOS gaming specifically",
+      "education_suitability": "Good for learning DOS-era computing concepts and batch scripting",
+      "known_trouble": "No native support for modern hardware like Wi-Fi, modern GPUs, or many recent storage controllers"
+    },
+    "privacy_security_notes": "Not applicable in a modern sense — a single-user, single-tasking legacy-oriented OS.",
+    "live_usb": "Yes, boots from USB/CD/floppy image",
+    "vm_support": "Yes — very commonly run in VMs (DOSBox is a separate emulator, not FreeDOS itself, worth noting they're different projects)",
+    "installation_difficulty": "Easy for its era — a straightforward text-based installer",
+    "why_it_exists": "Started in 1994 to create a free, open-source replacement for MS-DOS as Microsoft moved away from DOS, keeping DOS-based software and utilities usable.",
+    "who_its_for": "Retro computing enthusiasts, people needing to run legacy DOS software, or technicians needing DOS-based BIOS/firmware utilities.",
+    "what_makes_it_different": "A modern, actively-maintained, fully free reimplementation of DOS compatible with real MS-DOS software and drivers.",
+    "links": {
+      "official_website": "https://www.freedos.org/",
+      "download": "https://www.freedos.org/download/",
+      "documentation": "https://www.freedos.org/documentation/",
+      "installation_guide": "https://www.freedos.org/download/",
+      "release_notes": "https://www.freedos.org/news/",
+      "source_repository": "https://github.com/FreeDOS",
+      "checksums": "Not verified",
+      "forums_community": "http://www.freedos.org/forum/",
+      "mirrors": "https://www.freedos.org/download/#mirrors"
+    },
+    "related_os": [
+      "kolibrios"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "kolibrios"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "gentoo",
+    "name": "Gentoo",
+    "official_name": "Gentoo Linux",
+    "tagline": "Adaptable to any application or need.",
+    "family": "Linux / Gentoo family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux (also Gentoo/FreeBSD historically, mostly discontinued)",
+    "foundation": "Gentoo Foundation (community)",
+    "desktop_environments": [
+      "None by default — user builds their own"
+    ],
+    "package_manager": "Portage (source-based, compiles packages from 'ebuilds'; binary packages also available)",
+    "filesystems": [
+      "User's choice"
+    ],
+    "cpu_architectures": [
+      "x86_64, ARM, others"
+    ],
+    "hardware": {
+      "minimum": "Varies enormously; a base system can be very light",
+      "recommended": "A fast CPU and patience — Portage traditionally compiles from source",
+      "laptop_suitability": "Good once configured, but setup is involved",
+      "desktop_suitability": "Excellent for advanced users wanting deep optimization control",
+      "old_pc_suitability": "Can be excellent since you compile only what you need, but initial compile times on old hardware are long",
+      "server_suitability": "Good for specialists wanting a minimal, purpose-built system",
+      "gaming_suitability": "Good with USE flags tuned for graphics/gaming",
+      "education_suitability": "Excellent for deeply learning Linux internals; not for beginners",
+      "known_trouble": "Long compile times; requires understanding USE flags and manual configuration"
+    },
+    "privacy_security_notes": "No telemetry; security is largely user-configured.",
+    "live_usb": "Yes, minimal install media",
+    "vm_support": "Yes",
+    "installation_difficulty": "Very hard — fully manual, source-based installation following a detailed handbook",
+    "why_it_exists": "Created 2000 around the Portage package system, letting users compile software with custom optimizations (USE flags) for their exact hardware and needs.",
+    "who_its_for": "Advanced users who want maximum control over what is compiled into their system and why.",
+    "what_makes_it_different": "Source-based package management with USE flags for fine-grained feature control, rather than pre-built binary packages (binary packages are also offered now).",
+    "links": {
+      "official_website": "https://www.gentoo.org/",
+      "download": "https://www.gentoo.org/downloads/",
+      "documentation": "https://wiki.gentoo.org/wiki/Handbook:Main_Page",
+      "installation_guide": "https://wiki.gentoo.org/wiki/Handbook:AMD64",
+      "release_notes": "Not verified",
+      "source_repository": "https://gitweb.gentoo.org/",
+      "checksums": "SHA512/PGP signatures listed alongside downloads",
+      "forums_community": "https://forums.gentoo.org/",
+      "mirrors": "https://www.gentoo.org/downloads/mirrors/"
+    },
+    "related_os": [
+      "funtoo"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "void-linux",
+      "arch-linux",
+      "linux-from-scratch"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "ghostbsd",
+    "name": "GhostBSD",
+    "official_name": "GhostBSD",
+    "tagline": "A FreeBSD-based desktop operating system.",
+    "family": "BSD",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "FreeBSD kernel",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "MATE (flagship)",
+      "Xfce option"
+    ],
+    "package_manager": "pkg (FreeBSD's binary package manager)",
+    "filesystems": [
+      "ZFS (default, with the OpenZFS on-root benefits FreeBSD offers)",
+      "UFS option"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "~2GB RAM realistic for a desktop",
+      "recommended": "4GB+ RAM",
+      "laptop_suitability": "Moderate, inherits FreeBSD's driver support and its caveats",
+      "desktop_suitability": "Good — the main goal is a more approachable FreeBSD desktop",
+      "old_pc_suitability": "Moderate",
+      "server_suitability": "Not the focus — a desktop-oriented project",
+      "gaming_suitability": "Limited, same constraints as FreeBSD generally",
+      "education_suitability": "Good on-ramp for learning FreeBSD/ZFS with a friendlier installer",
+      "known_trouble": "Smaller community/testing base than mainstream Linux desktops"
+    },
+    "privacy_security_notes": "No telemetry.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy-moderate — graphical installer, easier entry point into FreeBSD than the base bsdinstall",
+    "why_it_exists": "Built to make FreeBSD approachable as a desktop OS with a graphical installer and desktop-ready defaults, since base FreeBSD doesn't ship a desktop by default.",
+    "who_its_for": "Users who want a FreeBSD-based desktop without manually configuring a desktop environment on top of base FreeBSD.",
+    "what_makes_it_different": "A ready-to-use graphical desktop (MATE/Xfce) with ZFS-on-root by default, layered on FreeBSD rather than Linux.",
+    "links": {
+      "official_website": "https://www.ghostbsd.org/",
+      "download": "https://www.ghostbsd.org/download",
+      "documentation": "https://www.ghostbsd.org/documentation",
+      "installation_guide": "https://www.ghostbsd.org/documentation",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/ghostbsd",
+      "checksums": "Provided on the download page",
+      "forums_community": "https://forums.ghostbsd.org/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "freebsd"
+    ],
+    "predecessor": "freebsd",
+    "successor": "",
+    "alternatives": [
+      "freebsd"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "guix-system",
+    "name": "Guix System",
+    "official_name": "GNU Guix System",
+    "tagline": "A transactional package manager and OS for GNU.",
+    "family": "Linux / GNU family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux-libre (fully free kernel, no proprietary firmware blobs)",
+    "foundation": "GNU Project",
+    "desktop_environments": [
+      "GNOME, Xfce, and others, declared in config"
+    ],
+    "package_manager": "GNU Guix (functional package manager, Scheme-based, inspired by Nix)",
+    "filesystems": [
+      "ext4, Btrfs — user's choice"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM (varies by support level)"
+    ],
+    "hardware": {
+      "minimum": "1GB+ RAM realistic for the installer",
+      "recommended": "4GB+ RAM",
+      "laptop_suitability": "Limited — Linux-libre's lack of proprietary firmware can break Wi-Fi/GPU on many laptops",
+      "desktop_suitability": "Good for free-software purists with compatible hardware",
+      "old_pc_suitability": "Moderate",
+      "server_suitability": "Good for reproducible, declarative infrastructure",
+      "gaming_suitability": "Poor — proprietary drivers and firmware are excluded by policy",
+      "education_suitability": "Good for learning functional package management and Scheme/GNU philosophy",
+      "known_trouble": "Requires libre-compatible hardware (no non-free firmware); many Wi-Fi chips and GPUs need workarounds or won't work at all"
+    },
+    "privacy_security_notes": "No telemetry; strict adherence to the Free System Distribution Guidelines (no proprietary firmware/software).",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Hard — declarative Scheme-based configuration, similar philosophy to NixOS but its own language",
+    "why_it_exists": "A GNU Project distribution built on the same functional-package-management ideas as Nix, but using GNU Guile Scheme and committed strictly to the Free System Distribution Guidelines.",
+    "who_its_for": "Free-software purists and functional-configuration enthusiasts who want a 100%-libre system.",
+    "what_makes_it_different": "Configuration and packaging is done in GNU Guile Scheme (a real programming language) rather than a domain-specific config language, and the whole distro ships only free software/firmware.",
+    "links": {
+      "official_website": "https://guix.gnu.org/",
+      "download": "https://guix.gnu.org/en/download/",
+      "documentation": "https://guix.gnu.org/manual/en/",
+      "installation_guide": "https://guix.gnu.org/manual/en/html_node/System-Installation.html",
+      "release_notes": "Not verified",
+      "source_repository": "https://git.savannah.gnu.org/cgit/guix.git",
+      "checksums": "GPG-signed release files described on the download page",
+      "forums_community": "https://guix.gnu.org/en/community/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "nixos"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "nixos",
+      "trisquel"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "haiku",
+    "name": "Haiku",
+    "official_name": "Haiku",
+    "tagline": "A modern, open-source operating system that specifically targets personal computing.",
+    "family": "Alternative / BeOS-inspired",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Custom hybrid kernel (Haiku's own, not Linux — reimplements the BeOS API)",
+    "foundation": "Haiku, Inc. (non-profit) + community",
+    "desktop_environments": [
+      "Native Haiku desktop (its own, not a Linux DE)"
+    ],
+    "package_manager": "pkgman (Haiku's own native package manager)",
+    "filesystems": [
+      "BFS (Be File System) — Haiku's own native filesystem with rich metadata support"
+    ],
+    "cpu_architectures": [
+      "x86 (32-bit)",
+      "x86_64",
+      "experimental ARM/RISC-V ports"
+    ],
+    "hardware": {
+      "minimum": "~256MB RAM realistic minimum",
+      "recommended": "1-2GB+ RAM",
+      "laptop_suitability": "Limited — Wi-Fi and GPU driver support is much narrower than Linux/BSD",
+      "desktop_suitability": "Good on supported hardware, especially in a VM",
+      "old_pc_suitability": "Good — genuinely fast and light on period-appropriate hardware",
+      "server_suitability": "Not designed for server use",
+      "gaming_suitability": "Poor — very limited native game library",
+      "education_suitability": "Excellent for studying an alternative, non-Unix desktop OS design",
+      "known_trouble": "Hardware driver support is much narrower than Linux; many modern laptops (especially Wi-Fi chips) are unsupported"
+    },
+    "privacy_security_notes": "No telemetry; single-user desktop-focused security model (not designed as a multi-user server OS).",
+    "live_usb": "Yes, official live/anyboot images",
+    "vm_support": "Yes — a common and well-supported way to try it",
+    "installation_difficulty": "Moderate — its own installer, unfamiliar to Linux/Windows users but well documented",
+    "why_it_exists": "A spiritual successor to BeOS (discontinued ~2001), rebuilding a fast, responsive, media-focused personal-computing OS from source, not derived from Linux or BSD.",
+    "who_its_for": "Enthusiasts who want a genuinely different, non-Unix-derived desktop OS with a focus on responsiveness.",
+    "what_makes_it_different": "Its own kernel and BFS filesystem (not Linux, not a Unix clone), heritage from BeOS with a design centered on desktop responsiveness and rich file metadata.",
+    "links": {
+      "official_website": "https://www.haiku-os.org/",
+      "download": "https://www.haiku-os.org/get-haiku/",
+      "documentation": "https://www.haiku-os.org/docs/",
+      "installation_guide": "https://www.haiku-os.org/guides/install-haiku/",
+      "release_notes": "https://www.haiku-os.org/news/",
+      "source_repository": "https://git.haiku-os.org/",
+      "checksums": "SHA256 checksums listed on the download page",
+      "forums_community": "https://discuss.haiku-os.org/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [],
+    "predecessor": "BeOS (spiritual successor, not a code fork)",
+    "successor": "",
+    "alternatives": [
+      "reactos",
+      "serenityos"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "kali-linux",
+    "name": "Kali Linux",
+    "official_name": "Kali Linux",
+    "tagline": "The most advanced penetration testing distribution.",
+    "family": "Linux / Debian family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Offensive Security",
+    "desktop_environments": [
+      "Xfce (default)",
+      "GNOME, KDE Plasma available"
+    ],
+    "package_manager": "APT (.deb)",
+    "filesystems": [
+      "ext4"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM (Raspberry Pi and others officially supported)"
+    ],
+    "hardware": {
+      "minimum": "2GB RAM (official minimum)",
+      "recommended": "4GB+ RAM, more for VM lab work",
+      "laptop_suitability": "Good; check Wi-Fi chipset supports monitor mode/injection if that's the intent",
+      "desktop_suitability": "Not intended as a general daily-driver desktop by design",
+      "old_pc_suitability": "Moderate",
+      "server_suitability": "Not applicable",
+      "gaming_suitability": "Not the intended use case",
+      "education_suitability": "Excellent for learning security tooling — widely used in cybersecurity courses",
+      "known_trouble": "Not all Wi-Fi adapters support the packet injection/monitor mode many Kali tools rely on"
+    },
+    "privacy_security_notes": "Ships hundreds of preinstalled security/pentesting tools; officially intended for authorized security testing and education only.",
+    "live_usb": "Yes, including persistence and specialized 'stealth'/forensic modes",
+    "vm_support": "Yes — official pre-built VM images provided",
+    "installation_difficulty": "Easy — Debian-derived graphical installer",
+    "why_it_exists": "A continuation of the BackTrack lineage, purpose-built and maintained by Offensive Security for penetration testing and digital forensics.",
+    "who_its_for": "Security professionals, students, and researchers doing authorized penetration testing and forensics.",
+    "what_makes_it_different": "Curated, continuously updated collection of security tools organized by category, plus official ARM/Raspberry Pi and cloud images.",
+    "links": {
+      "official_website": "https://www.kali.org/",
+      "download": "https://www.kali.org/get-kali/",
+      "documentation": "https://www.kali.org/docs/",
+      "installation_guide": "https://www.kali.org/docs/installation/",
+      "release_notes": "https://www.kali.org/releases/",
+      "source_repository": "https://gitlab.com/kalilinux",
+      "checksums": "SHA256 signatures documented at kali.org/docs/introduction/download-official-kali-linux-images/",
+      "forums_community": "https://forums.kali.org/",
+      "mirrors": "https://http.kali.org/README.mirrorlist"
+    },
+    "related_os": [
+      "parrot-os",
+      "debian"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "parrot-os",
+      "blackarch"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "kubuntu",
+    "name": "Kubuntu",
+    "official_name": "Kubuntu",
+    "tagline": "The friendly computing platform, using the KDE Plasma desktop.",
+    "family": "Linux / Debian-Ubuntu family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Official Ubuntu flavor",
+    "desktop_environments": [
+      "KDE Plasma"
+    ],
+    "package_manager": "APT (.deb) + Snap",
+    "filesystems": [
+      "ext4"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "~4GB RAM realistic",
+      "recommended": "8GB+ RAM",
+      "laptop_suitability": "Good",
+      "desktop_suitability": "Excellent — a very customizable, feature-rich desktop",
+      "old_pc_suitability": "Moderate — Plasma is more configurable-to-be-light than GNOME but heavier than Xfce/LXQt by default",
+      "server_suitability": "Not a typical use case",
+      "gaming_suitability": "Good, same driver stack as Ubuntu",
+      "education_suitability": "Good for exploring a highly configurable desktop paradigm",
+      "known_trouble": "None particular beyond standard Linux driver caveats"
+    },
+    "privacy_security_notes": "No telemetry by default.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy",
+    "why_it_exists": "An official Ubuntu flavor bringing the KDE Plasma desktop, known for deep customization, to Ubuntu's base.",
+    "who_its_for": "Users wanting a highly configurable, visually rich desktop with Ubuntu's package base.",
+    "what_makes_it_different": "KDE Plasma's extensive customization options paired with official Ubuntu flavor support.",
+    "links": {
+      "official_website": "https://kubuntu.org/",
+      "download": "https://kubuntu.org/getkubuntu/",
+      "documentation": "https://kubuntu.org/support/",
+      "installation_guide": "https://kubuntu.org/getkubuntu/",
+      "release_notes": "https://kubuntu.org/news/",
+      "source_repository": "https://github.com/kubuntu-team",
+      "checksums": "SHA256SUMS on ubuntu.com download infrastructure",
+      "forums_community": "https://discourse.ubuntu.com/c/kubuntu/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "ubuntu"
+    ],
+    "predecessor": "ubuntu",
+    "successor": "",
+    "alternatives": [
+      "opensuse",
+      "linux-mint"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "libreelec",
+    "name": "LibreELEC",
+    "official_name": "LibreELEC (Libre Embedded Linux Entertainment Center)",
+    "tagline": "Just enough OS for Kodi.",
+    "family": "Linux / independent (media-center appliance)",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "Kodi media-center interface — the entire point of the OS"
+    ],
+    "package_manager": "Add-on system inside Kodi; the base OS itself is a minimal appliance image",
+    "filesystems": [
+      "Runs largely as a read-only appliance image"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM (Raspberry Pi and other SBCs officially supported)"
+    ],
+    "hardware": {
+      "minimum": "Very low — designed to run well on Raspberry Pi-class hardware",
+      "recommended": "Any PC or SBC with hardware video decoding support for smooth 4K/HDR playback",
+      "laptop_suitability": "Usable but designed for dedicated media-center boxes, not general laptop use",
+      "desktop_suitability": "Not a general desktop OS — a dedicated Kodi appliance",
+      "old_pc_suitability": "Good — old PCs make capable dedicated media centers",
+      "server_suitability": "Not applicable",
+      "gaming_suitability": "Not the focus",
+      "education_suitability": "Good example of a minimal, purpose-built appliance Linux image",
+      "known_trouble": "Not a general-purpose OS; only does what Kodi and its add-ons support"
+    },
+    "privacy_security_notes": "No telemetry beyond typical update checks.",
+    "live_usb": "Yes — the standard install method",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy — flash the image and boot directly into Kodi",
+    "why_it_exists": "Built to be the minimal possible OS layer needed to run Kodi well, descended from the earlier OpenELEC project.",
+    "who_its_for": "Anyone wanting a dedicated, low-maintenance Kodi media-center box.",
+    "what_makes_it_different": "An extremely minimal appliance image whose only job is booting straight into Kodi, rather than being a general-purpose desktop.",
+    "links": {
+      "official_website": "https://libreelec.tv/",
+      "download": "https://libreelec.tv/downloads/",
+      "documentation": "https://wiki.libreelec.tv/",
+      "installation_guide": "https://wiki.libreelec.tv/installation/generic",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/LibreELEC/LibreELEC.tv",
+      "checksums": "Not verified",
+      "forums_community": "https://forum.libreelec.tv/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "batocera"
+    ],
+    "predecessor": "OpenELEC",
+    "successor": "",
+    "alternatives": [
+      "batocera"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "linux-mint",
+    "name": "Linux Mint",
+    "official_name": "Linux Mint",
+    "tagline": "From freedom came elegance.",
+    "family": "Linux / Debian-Ubuntu family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Linux Mint Team (community, donation-funded)",
+    "desktop_environments": [
+      "Cinnamon (flagship)",
+      "MATE",
+      "Xfce"
+    ],
+    "package_manager": "APT (.deb)",
+    "filesystems": [
+      "ext4 (default)"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "~2GB RAM, 20GB disk (official minimum)",
+      "recommended": "4GB RAM, 100GB disk",
+      "laptop_suitability": "Very good, inherits Ubuntu's hardware support",
+      "desktop_suitability": "Excellent — widely recommended as a Windows-switcher distro",
+      "old_pc_suitability": "Good with MATE or Xfce editions",
+      "server_suitability": "Not a typical choice — desktop focused",
+      "gaming_suitability": "Good, same driver stack as Ubuntu",
+      "education_suitability": "Very good — traditional desktop metaphor is familiar to Windows users",
+      "known_trouble": "None particular beyond standard Linux driver caveats"
+    },
+    "privacy_security_notes": "No telemetry by default; ships its own Update Manager with cautious update-safety levels.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy",
+    "why_it_exists": "Started 2006 to provide a more traditional, polished desktop experience than Ubuntu offered, with multimedia codecs included out of the box.",
+    "who_its_for": "People switching from Windows who want a familiar taskbar/start-menu layout and low friction.",
+    "what_makes_it_different": "Cinnamon desktop, curated 'Update Manager', and a strong focus on out-of-the-box usability over ideology.",
+    "links": {
+      "official_website": "https://linuxmint.com/",
+      "download": "https://linuxmint.com/download.php",
+      "documentation": "https://linuxmint.com/documentation.php",
+      "installation_guide": "https://linuxmint.com/documentation.php",
+      "release_notes": "https://linuxmint.com/rel_index.php",
+      "source_repository": "https://github.com/linuxmint",
+      "checksums": "SHA256SUMS published on linuxmint.com download page",
+      "forums_community": "https://forums.linuxmint.com/",
+      "mirrors": "https://linuxmint.com/mirrors.php"
+    },
+    "related_os": [
+      "ubuntu",
+      "debian"
+    ],
+    "predecessor": "ubuntu",
+    "successor": "",
+    "alternatives": [
+      "zorin-os",
+      "mx-linux"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "lubuntu",
+    "name": "Lubuntu",
+    "official_name": "Lubuntu",
+    "tagline": "A lightweight, easy to use, and fast Ubuntu flavor.",
+    "family": "Linux / Debian-Ubuntu family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Official Ubuntu flavor, community-maintained under Canonical's Ubuntu umbrella",
+    "desktop_environments": [
+      "LXQt"
+    ],
+    "package_manager": "APT (.deb)",
+    "filesystems": [
+      "ext4"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM64"
+    ],
+    "hardware": {
+      "minimum": "1GB RAM (official minimum stated by the project)",
+      "recommended": "2GB+ RAM",
+      "laptop_suitability": "Good, inherits Ubuntu's hardware support with a lighter desktop",
+      "desktop_suitability": "Good for lower-spec machines wanting Ubuntu's package ecosystem",
+      "old_pc_suitability": "Very good — the official lightweight Ubuntu flavor",
+      "server_suitability": "Not a typical use case",
+      "gaming_suitability": "Moderate, same driver stack as Ubuntu",
+      "education_suitability": "Good introduction to a lighter desktop environment (LXQt) within a familiar Ubuntu base",
+      "known_trouble": "None particular beyond standard Linux driver caveats"
+    },
+    "privacy_security_notes": "No telemetry by default; same security update model as Ubuntu.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy",
+    "why_it_exists": "An official Ubuntu flavor built to bring Ubuntu's ecosystem to lower-spec hardware using the lightweight LXQt desktop.",
+    "who_its_for": "Users with older or lower-spec PCs who still want Ubuntu's package base and support.",
+    "what_makes_it_different": "LXQt desktop keeps resource use low while remaining a fully official, Canonical-recognized Ubuntu flavor (not a third-party derivative).",
+    "links": {
+      "official_website": "https://lubuntu.me/",
+      "download": "https://lubuntu.me/downloads/",
+      "documentation": "https://manual.lubuntu.me/",
+      "installation_guide": "https://manual.lubuntu.me/stable/1/1.2/1.2.2.html",
+      "release_notes": "https://lubuntu.me/category/news/",
+      "source_repository": "https://github.com/lubuntu-team",
+      "checksums": "SHA256SUMS listed on ubuntu.com download infrastructure",
+      "forums_community": "https://discourse.lubuntu.me/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "ubuntu",
+      "xubuntu"
+    ],
+    "predecessor": "ubuntu",
+    "successor": "",
+    "alternatives": [
+      "xubuntu",
+      "linux-lite"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "manjaro",
+    "name": "Manjaro",
+    "official_name": "Manjaro Linux",
+    "tagline": "Simple, User-Friendly, Linux-Based Operating System.",
+    "family": "Linux / Arch family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Manjaro GmbH & Co. KG (community + commercial)",
+    "desktop_environments": [
+      "Xfce, KDE Plasma, GNOME (official editions)",
+      "many community editions"
+    ],
+    "package_manager": "Pacman + AUR (via helpers) + Manjaro's own stable/testing/unstable branches",
+    "filesystems": [
+      "ext4 (default)",
+      "Btrfs option"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM (separate Manjaro ARM project)"
+    ],
+    "hardware": {
+      "minimum": "1GB RAM claimed minimum; 2GB+ realistic",
+      "recommended": "4GB+ RAM",
+      "laptop_suitability": "Good, includes automatic proprietary driver detection (mhwd)",
+      "desktop_suitability": "Very good, popular Arch-based entry point",
+      "old_pc_suitability": "Moderate — Xfce edition is lighter",
+      "server_suitability": "Not a typical choice",
+      "gaming_suitability": "Very good, rolling release with curated stability delay",
+      "education_suitability": "Good for learning Arch-style package management with more safety rails",
+      "known_trouble": "Has had past controversies over certificate expirations and AUR compatibility issues; not officially endorsed by Arch"
+    },
+    "privacy_security_notes": "No telemetry by default.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy-to-moderate — graphical Calamares installer",
+    "why_it_exists": "Created 2011 to bring Arch Linux's rolling-release power to users who want a graphical installer and out-of-the-box hardware detection.",
+    "who_its_for": "Users who want Arch's package freshness without doing a fully manual install.",
+    "what_makes_it_different": "Delays packages behind Arch's repos for extra testing/stability, and ships a hardware detection tool (mhwd) for proprietary drivers.",
+    "links": {
+      "official_website": "https://manjaro.org/",
+      "download": "https://manjaro.org/download/",
+      "documentation": "https://wiki.manjaro.org/",
+      "installation_guide": "https://wiki.manjaro.org/index.php/Installation",
+      "release_notes": "https://forum.manjaro.org/c/announcements/",
+      "source_repository": "https://gitlab.manjaro.org/",
+      "checksums": "SHA256 checksums listed on download page",
+      "forums_community": "https://forum.manjaro.org/",
+      "mirrors": "https://repo.manjaro.org/"
+    },
+    "related_os": [
+      "arch-linux",
+      "endeavouros"
+    ],
+    "predecessor": "arch-linux",
+    "successor": "",
+    "alternatives": [
+      "endeavouros",
+      "cachyos"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "ms-dos",
+    "name": "MS-DOS",
+    "official_name": "MS-DOS (Microsoft Disk Operating System)",
+    "tagline": "The OS that built the PC industry — now partly open-sourced by Microsoft itself.",
+    "family": "DOS",
+    "status": "ARCHIVED",
+    "status_note": "Discontinued as a shipping product in 2000 (final consumer release under Windows Me). Versions 1.25, 2.0 and 4.0 source code re-released by Microsoft on GitHub for historical reference; not maintained or supported.",
+    "kernel": "MS-DOS kernel (IO.SYS/MSDOS.SYS, 8086 assembly, later partly C)",
+    "foundation": "Microsoft Corporation",
+    "desktop_environments": [
+      "Text-mode command line (COMMAND.COM); optional DOS Shell text UI in later versions"
+    ],
+    "package_manager": "None — manual file/driver installation",
+    "filesystems": [
+      "FAT12, FAT16"
+    ],
+    "cpu_architectures": [
+      "x86 (8086/8088 real mode, later 80286/386 real mode)"
+    ],
+    "hardware": {
+      "minimum": "Original IBM PC/XT class hardware — kilobytes of RAM for early versions",
+      "recommended": "Any period x86 PC through the mid-1990s; today, an emulator (86Box, PCem, DOSBox) or a genuine retro machine",
+      "laptop_suitability": "Only for retro/vintage laptops from the DOS era",
+      "desktop_suitability": "Retro computing and legacy-software use only — not a modern desktop OS",
+      "old_pc_suitability": "Its native habitat — this is what those machines originally ran",
+      "server_suitability": "Not applicable",
+      "gaming_suitability": "Good for retro DOS gaming via original hardware or an emulator",
+      "education_suitability": "Excellent for teaching early PC architecture, the BIOS/DOS boot process, and assembly-level programming",
+      "known_trouble": "No native support for anything resembling modern hardware; the open-sourced versions (1.25/2.0/4.0) are for study/experimentation, not a usable modern install"
+    },
+    "privacy_security_notes": "Single-user, single-tasking, no security model in the modern sense — predates networking-era threat models entirely.",
+    "live_usb": "Not applicable in the modern sense; bootable floppy/USB images exist for the open-sourced versions for use in emulators",
+    "vm_support": "Yes — commonly run today via DOSBox, 86Box, PCem, or standard VM software with a period BIOS",
+    "installation_difficulty": "Simple by historical standards, but requires an emulator or genuine period hardware today",
+    "why_it_exists": "Microsoft licensed and adapted 86-DOS to sell IBM the operating system for the original IBM PC in 1981, and MS-DOS became the dominant PC operating system for over a decade before Windows took over.",
+    "who_its_for": "Computing historians, retro hardware collectors, and anyone studying how the DOS-era PC boot process and early Microsoft software actually worked at the source level.",
+    "what_makes_it_different": "It's the OS PC compatibility itself was built around — and unlike most abandoned commercial OSes, Microsoft itself re-released the 1.25, 2.0, and 4.0 source code publicly under the MIT License for reference.",
+    "links": {
+      "official_website": "https://github.com/microsoft/MS-DOS",
+      "download": "https://github.com/microsoft/MS-DOS",
+      "documentation": "https://github.com/microsoft/MS-DOS/blob/main/README.md",
+      "installation_guide": "Not applicable — source release, not an installable image; use an x86 emulator to run the included binaries/disk images",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/microsoft/MS-DOS",
+      "checksums": "Not verified",
+      "forums_community": "https://github.com/microsoft/MS-DOS/issues",
+      "mirrors": "Not applicable"
+    },
+    "related_os": [
+      "freedos"
+    ],
+    "predecessor": "86-DOS",
+    "successor": "Windows 9x (consumer), Windows NT line",
+    "alternatives": [
+      "freedos"
+    ],
+    "last_verified": "2026-08 (Claude training + live web search during this build — verify before use)"
+  },
+  {
+    "id": "mx-linux",
+    "name": "MX Linux",
+    "official_name": "MX Linux",
+    "tagline": "A family of Linux distributions... midweight, stable, and highly functional.",
+    "family": "Linux / Debian family (with antiX/SysVinit heritage)",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "MX Linux community (antiX + former MEPIS community collaboration)",
+    "desktop_environments": [
+      "Xfce (flagship)",
+      "KDE Plasma",
+      "Fluxbox"
+    ],
+    "package_manager": "APT (.deb) plus MX's own graphical tools (MX Package Installer)",
+    "filesystems": [
+      "ext4 (default)"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "i386 (32-bit edition available)"
+    ],
+    "hardware": {
+      "minimum": "~1GB RAM, 512MB claimed for very light use",
+      "recommended": "2GB+ RAM",
+      "laptop_suitability": "Good",
+      "desktop_suitability": "Very good, consistently rated a top lightweight desktop choice",
+      "old_pc_suitability": "Excellent — a top pick for reviving older machines, including a 32-bit edition",
+      "server_suitability": "Not a typical use case",
+      "gaming_suitability": "Moderate, works fine with standard driver setup",
+      "education_suitability": "Good, MX Tools give a friendly graphical layer over Debian internals",
+      "known_trouble": "Uses SysVinit by default (with systemd available as an alternative) which is atypical among modern distros"
+    },
+    "privacy_security_notes": "No telemetry.",
+    "live_usb": "Yes, with persistence options (a distinguishing strength)",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy — graphical installer plus friendly 'MX Tools' utilities",
+    "why_it_exists": "A collaboration between the antiX and former MEPIS communities to build a Debian-stable-based midweight distro with strong live-USB and snapshot tools.",
+    "who_its_for": "Users who want a lightweight, highly customizable desktop that still feels approachable, and people reviving older PCs.",
+    "what_makes_it_different": "MX Tools (snapshot, live-USB creation with persistence, package installer) and a choice between systemd and SysVinit.",
+    "links": {
+      "official_website": "https://mxlinux.org/",
+      "download": "https://mxlinux.org/download-links/",
+      "documentation": "https://mxlinux.org/wiki/",
+      "installation_guide": "https://mxlinux.org/wiki/help-files/help-mx-live-usb-creation-tool/",
+      "release_notes": "https://mxlinux.org/blog/",
+      "source_repository": "https://github.com/MX-Linux",
+      "checksums": "SHA256/GPG signatures on download page",
+      "forums_community": "https://forum.mxlinux.org/",
+      "mirrors": "https://mxlinux.org/downloadmirrors/"
+    },
+    "related_os": [
+      "antix",
+      "debian"
+    ],
+    "predecessor": "debian / antiX / MEPIS",
+    "successor": "",
+    "alternatives": [
+      "antix",
+      "q4os",
+      "linux-lite"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "netbsd",
+    "name": "NetBSD",
+    "official_name": "NetBSD",
+    "tagline": "Of course it runs NetBSD.",
+    "family": "BSD",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "NetBSD kernel",
+    "foundation": "The NetBSD Foundation (community)",
+    "desktop_environments": [
+      "None by default; installable via pkgsrc: Xfce, GNOME, and others"
+    ],
+    "package_manager": "pkgsrc (notably portable — also runs on many other Unix-like systems, not just NetBSD)",
+    "filesystems": [
+      "FFS, with support for many others"
+    ],
+    "cpu_architectures": [
+      "An exceptionally wide range — a defining project goal, from modern x86_64/ARM64 to many legacy/embedded platforms"
+    ],
+    "hardware": {
+      "minimum": "Extremely low on minimal ports — a defining strength",
+      "recommended": "Varies hugely; can run on very old or unusual hardware where other OSes have dropped support",
+      "laptop_suitability": "Moderate, similar caveats to other BSDs regarding driver breadth",
+      "desktop_suitability": "Usable but minimalist; not consumer-polished",
+      "old_pc_suitability": "Excellent — 'of course it runs NetBSD' is literally the project's joke about extreme portability to old/unusual hardware",
+      "server_suitability": "Good, particularly on unusual or legacy hardware",
+      "gaming_suitability": "Poor — not the focus",
+      "education_suitability": "Excellent for studying portable OS design across many CPU architectures",
+      "known_trouble": "Smaller mainstream desktop hardware driver coverage than Linux; strength is breadth of supported architectures, not depth of modern laptop support"
+    },
+    "privacy_security_notes": "No telemetry; a smaller, more conservative codebase in the classic BSD tradition.",
+    "live_usb": "Yes, install media provided for supported platforms",
+    "vm_support": "Yes",
+    "installation_difficulty": "Moderate-hard — text-based sysinst installer",
+    "why_it_exists": "Forked from 386BSD in 1993 with portability across many CPU architectures as its defining goal — from modern PCs to old, obscure, and embedded hardware.",
+    "who_its_for": "Enthusiasts running unusual or legacy hardware, and anyone studying maximally portable OS/kernel design.",
+    "what_makes_it_different": "Runs on an unusually wide range of CPU architectures and hardware platforms compared to almost any other general-purpose OS.",
+    "links": {
+      "official_website": "https://www.netbsd.org/",
+      "download": "https://www.netbsd.org/download/",
+      "documentation": "https://www.netbsd.org/docs/",
+      "installation_guide": "https://www.netbsd.org/docs/guide/en/chap-inst.html",
+      "release_notes": "https://www.netbsd.org/releases/",
+      "source_repository": "https://github.com/NetBSD",
+      "checksums": "SHA512 checksums published with releases",
+      "forums_community": "https://www.netbsd.org/mailinglists/",
+      "mirrors": "https://www.netbsd.org/mirrors/"
+    },
+    "related_os": [
+      "freebsd",
+      "openbsd"
+    ],
+    "predecessor": "",
+    "successor": "openbsd",
+    "alternatives": [
+      "freebsd",
+      "openbsd"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "nixos",
+    "name": "NixOS",
+    "official_name": "NixOS",
+    "tagline": "Reproducible, declarative, reliable systems.",
+    "family": "Linux / independent",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "NixOS Foundation / community, built on the Nix package manager",
+    "desktop_environments": [
+      "Optional/declared: GNOME, KDE Plasma, Xfce, and more"
+    ],
+    "package_manager": "Nix (declarative, functional package manager; whole system configured via .nix files)",
+    "filesystems": [
+      "ext4, Btrfs, ZFS — user's choice"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM64"
+    ],
+    "hardware": {
+      "minimum": "~1GB RAM claimed minimum for the installer; more for a desktop",
+      "recommended": "4GB+ RAM, ample disk (the Nix store keeps old generations)",
+      "laptop_suitability": "Good once the declarative config for the hardware is written",
+      "desktop_suitability": "Good for users who like reproducible, versioned configs",
+      "old_pc_suitability": "Moderate — the Nix store can use more disk than typical distros",
+      "server_suitability": "Very good — declarative configs are popular for reproducible infrastructure",
+      "gaming_suitability": "Workable, some extra friction with proprietary/FHS-expecting software",
+      "education_suitability": "Steep learning curve but valuable for learning declarative system management",
+      "known_trouble": "The Nix language and non-standard filesystem layout (no /usr/lib as expected by some binaries) trips up newcomers and some proprietary software"
+    },
+    "privacy_security_notes": "No telemetry.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Hard — conceptually different (declarative configuration.nix) from traditional installers",
+    "why_it_exists": "Built around the Nix package manager (created 2003 by Eelco Dolstra) to make entire system configurations reproducible, atomic, and rollback-able.",
+    "who_its_for": "Users and teams who want reproducible builds/configs and easy rollback of the whole system, not just packages.",
+    "what_makes_it_different": "The entire OS state is described in a configuration.nix file; changes are atomic and every previous generation can be booted again from the bootloader.",
+    "links": {
+      "official_website": "https://nixos.org/",
+      "download": "https://nixos.org/download.html",
+      "documentation": "https://nixos.org/manual/nixos/stable/",
+      "installation_guide": "https://nixos.org/manual/nixos/stable/#sec-installation",
+      "release_notes": "https://nixos.org/manual/nixos/stable/release-notes.html",
+      "source_repository": "https://github.com/NixOS/nixpkgs",
+      "checksums": "SHA256 listed on download page",
+      "forums_community": "https://discourse.nixos.org/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "guix-system"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "guix-system"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "nobara",
+    "name": "Nobara",
+    "official_name": "Nobara Project",
+    "tagline": "A modified version of Fedora with user-friendly fixes, focused on gaming.",
+    "family": "Linux / Fedora family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux (custom-patched kernel with gaming-related fixes)",
+    "foundation": "Independent community project, led by a former Valve/CodeWeavers contributor",
+    "desktop_environments": [
+      "GNOME and KDE Plasma editions"
+    ],
+    "package_manager": "DNF (RPM), plus curated codecs/gaming tweaks preapplied",
+    "filesystems": [
+      "Btrfs or ext4, installer choice"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "4GB+ RAM realistic",
+      "recommended": "8GB+ RAM, discrete GPU for gaming",
+      "laptop_suitability": "Good",
+      "desktop_suitability": "Very good for gaming-focused desktop use",
+      "old_pc_suitability": "Poor — targets modern gaming hardware",
+      "server_suitability": "Not applicable",
+      "gaming_suitability": "Excellent — patched kernel plus preinstalled codecs/drivers targeted specifically at gaming pain points",
+      "education_suitability": "Moderate",
+      "known_trouble": "As a smaller, heavily-patched Fedora derivative, upgrades between major versions have historically needed more care than plain Fedora"
+    },
+    "privacy_security_notes": "No unusual telemetry beyond upstream Fedora components.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy — Fedora's Anaconda-based installer with gaming defaults pre-applied",
+    "why_it_exists": "Created to fix common Fedora gaming pain points out of the box (codecs, NVIDIA drivers, kernel patches) without requiring manual post-install tweaking.",
+    "who_its_for": "Gamers who want Fedora's base but without doing the usual post-install gaming setup work themselves.",
+    "what_makes_it_different": "A custom-patched kernel and pre-applied gaming/codec fixes bundled directly into the ISO, versus doing that setup manually on plain Fedora.",
+    "links": {
+      "official_website": "https://nobaraproject.org/",
+      "download": "https://nobaraproject.org/download-nobara/",
+      "documentation": "https://nobaraproject.org/docs-and-faq/",
+      "installation_guide": "https://nobaraproject.org/docs-and-faq/",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/gloriouseggroll/nobara",
+      "checksums": "Not verified",
+      "forums_community": "https://discord.gg/XYyRxg8kzz (per project site)",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "fedora",
+      "bazzite"
+    ],
+    "predecessor": "fedora",
+    "successor": "",
+    "alternatives": [
+      "bazzite",
+      "steamos"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "openbsd",
+    "name": "OpenBSD",
+    "official_name": "OpenBSD",
+    "tagline": "Only two remote holes in the default install, in a heck of a long time!",
+    "family": "BSD",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "OpenBSD kernel",
+    "foundation": "The OpenBSD Project (community)",
+    "desktop_environments": [
+      "None by default; installable: Xfce, GNOME, and others via packages"
+    ],
+    "package_manager": "pkg_add + the Ports collection",
+    "filesystems": [
+      "FFS (Fast File System)"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM64",
+      "many others — a strong multi-architecture focus"
+    ],
+    "hardware": {
+      "minimum": "~1GB RAM realistic for a base install",
+      "recommended": "2GB+ RAM",
+      "laptop_suitability": "Moderate, notably good power-management (apm/hibernate) work relative to its size, but narrower Wi-Fi support than Linux",
+      "desktop_suitability": "Usable but minimalist by design; not consumer-desktop-polished",
+      "old_pc_suitability": "Good",
+      "server_suitability": "Excellent, especially for firewalls/routers/security-critical services",
+      "gaming_suitability": "Poor — not the focus at all",
+      "education_suitability": "Excellent for learning secure-by-default system design and code auditing practices",
+      "known_trouble": "Smaller hardware driver support than Linux/FreeBSD; proprietary/binary blobs are avoided by policy where possible"
+    },
+    "privacy_security_notes": "Security is the project's central goal: a strong track record from proactive code auditing, and technologies like pledge()/unveil() sandboxing that originated here.",
+    "live_usb": "Limited — historically OpenBSD favored direct installation over polished live-USB experiences, though bootable install media exists",
+    "vm_support": "Yes",
+    "installation_difficulty": "Moderate-hard — minimal text installer, values simplicity and correctness over hand-holding",
+    "why_it_exists": "Forked from NetBSD in 1995 by Theo de Raadt with security and code correctness as the primary founding goals.",
+    "who_its_for": "Security-focused sysadmins, firewall/router builders, and anyone who values a minimal, heavily-audited codebase.",
+    "what_makes_it_different": "An explicit, decades-long focus on proactive security auditing; originated widely-used security technologies (OpenSSH, pledge/unveil) later adopted elsewhere.",
+    "links": {
+      "official_website": "https://www.openbsd.org/",
+      "download": "https://www.openbsd.org/faq/faq4.html",
+      "documentation": "https://www.openbsd.org/faq/",
+      "installation_guide": "https://www.openbsd.org/faq/faq4.html",
+      "release_notes": "https://www.openbsd.org/plus.html",
+      "source_repository": "https://cvsweb.openbsd.org/",
+      "checksums": "SHA256/signify signatures published with releases",
+      "forums_community": "https://www.openbsd.org/mail.html (mailing lists)",
+      "mirrors": "https://www.openbsd.org/ftp.html"
+    },
+    "related_os": [
+      "freebsd",
+      "netbsd"
+    ],
+    "predecessor": "netbsd",
+    "successor": "OpenSSH, pledge/unveil are widely adopted elsewhere",
+    "alternatives": [
+      "freebsd",
+      "netbsd"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "openmediavault",
+    "name": "OpenMediaVault",
+    "official_name": "OpenMediaVault",
+    "tagline": "The next generation network-attached storage solution based on Debian.",
+    "family": "Linux / Debian family (NAS appliance)",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "Web-based management UI — no traditional desktop"
+    ],
+    "package_manager": "APT (.deb), Debian-based, with an OMV-specific plugin system",
+    "filesystems": [
+      "ext4 (default)",
+      "Btrfs, ZFS (via plugin)"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM (including Raspberry Pi)"
+    ],
+    "hardware": {
+      "minimum": "~1GB RAM realistic minimum; runs on lighter hardware than ZFS-centric TrueNAS",
+      "recommended": "2GB+ RAM",
+      "laptop_suitability": "Not intended for laptops — a dedicated NAS platform",
+      "desktop_suitability": "Not a desktop OS at all",
+      "old_pc_suitability": "Good — a common way to repurpose an old PC as a home NAS",
+      "server_suitability": "Excellent for home/small NAS use",
+      "gaming_suitability": "Not applicable",
+      "education_suitability": "Good for learning Linux-based NAS/storage administration",
+      "known_trouble": "Feature set/plugin ecosystem is smaller than TrueNAS's, though lighter on resources"
+    },
+    "privacy_security_notes": "Self-hosted storage.",
+    "live_usb": "Installer boots from USB but results in an installed appliance",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy-moderate — Debian-based graphical installer plus web UI for ongoing configuration",
+    "why_it_exists": "Built as a lighter-weight, Debian-based NAS alternative for users who don't need ZFS's resource requirements.",
+    "who_its_for": "Home users wanting a lightweight, easy-to-run NAS on modest hardware.",
+    "what_makes_it_different": "Runs comfortably on lighter hardware than ZFS-centric NAS platforms, with a plugin system for extending features.",
+    "links": {
+      "official_website": "https://www.openmediavault.org/",
+      "download": "https://www.openmediavault.org/download.html",
+      "documentation": "https://docs.openmediavault.org/",
+      "installation_guide": "https://docs.openmediavault.org/en/latest/installation/index.html",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/openmediavault/openmediavault",
+      "checksums": "Provided on the download page",
+      "forums_community": "https://forum.openmediavault.org/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "truenas",
+      "debian"
+    ],
+    "predecessor": "debian",
+    "successor": "",
+    "alternatives": [
+      "truenas"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "opensuse",
+    "name": "openSUSE",
+    "official_name": "openSUSE (Leap and Tumbleweed)",
+    "tagline": "The makers' choice for sysadmins, developers and desktop users.",
+    "family": "Linux / SUSE family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "openSUSE Project, sponsored by SUSE",
+    "desktop_environments": [
+      "KDE Plasma (flagship)",
+      "GNOME",
+      "Xfce",
+      "others"
+    ],
+    "package_manager": "Zypper (RPM)",
+    "filesystems": [
+      "Btrfs (default, with snapshots via Snapper)",
+      "ext4, XFS"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM64",
+      "others"
+    ],
+    "hardware": {
+      "minimum": "1GB RAM, ~5GB disk for a minimal install",
+      "recommended": "4GB+ RAM",
+      "laptop_suitability": "Good",
+      "desktop_suitability": "Excellent, mature YaST configuration tool",
+      "old_pc_suitability": "Moderate; consider a lighter DE",
+      "server_suitability": "Very good — SUSE's enterprise lineage (SLE) shares this base",
+      "gaming_suitability": "Good, especially on Tumbleweed's rolling packages",
+      "education_suitability": "Good, YaST is a distinctive unified admin tool worth learning",
+      "known_trouble": "Two very different release models (Leap=points, Tumbleweed=rolling) can confuse newcomers about which to pick"
+    },
+    "privacy_security_notes": "No telemetry by default; Btrfs snapshots + Snapper make rollbacks after bad updates easy.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Moderate — YaST-based installer is powerful but has many options",
+    "why_it_exists": "Community project since 2005 (SUSE Linux lineage traces to 1992), balancing a stable point-release (Leap) and a rolling release (Tumbleweed).",
+    "who_its_for": "Sysadmins and developers who want YaST's unified configuration tooling and strong Btrfs snapshot/rollback support.",
+    "what_makes_it_different": "YaST control center, dual release models in one project, and heavy automated testing (openQA) before Tumbleweed snapshots ship.",
+    "links": {
+      "official_website": "https://www.opensuse.org/",
+      "download": "https://get.opensuse.org/",
+      "documentation": "https://doc.opensuse.org/",
+      "installation_guide": "https://doc.opensuse.org/documentation/leap/startup/html/book-startup/cha-install.html",
+      "release_notes": "https://doc.opensuse.org/release-notes/",
+      "source_repository": "https://build.opensuse.org/",
+      "checksums": "SHA256 checksums and signatures listed on get.opensuse.org",
+      "forums_community": "https://forums.opensuse.org/",
+      "mirrors": "https://mirrors.opensuse.org/"
+    },
+    "related_os": [
+      "sle"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "fedora",
+      "debian"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "openwrt",
+    "name": "OpenWrt",
+    "official_name": "OpenWrt",
+    "tagline": "A Linux operating system targeting embedded devices, primarily routers.",
+    "family": "Linux / independent (embedded/router)",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "LuCI web interface — no traditional desktop, this targets routers"
+    ],
+    "package_manager": "opkg",
+    "filesystems": [
+      "SquashFS + overlay (typical for embedded flash storage)"
+    ],
+    "cpu_architectures": [
+      "MIPS, ARM, x86 — a huge range of router/embedded chipsets"
+    ],
+    "hardware": {
+      "minimum": "Runs on modest router-class hardware (a few MB flash, tens of MB RAM on smaller devices)",
+      "recommended": "Varies by target device — check OpenWrt's Table of Hardware before flashing any specific router",
+      "laptop_suitability": "Not applicable — this targets routers/embedded devices, not general PCs",
+      "desktop_suitability": "Not applicable",
+      "old_pc_suitability": "Some old PCs are used as OpenWrt-based routers/firewalls (x86 target)",
+      "server_suitability": "Specialized — routing/firewall/networking appliance use, not general server workloads",
+      "gaming_suitability": "Not applicable",
+      "education_suitability": "Excellent for learning embedded Linux, routing, and networking internals",
+      "known_trouble": "Flashing the wrong image to a router can brick it; always check the specific device's page in OpenWrt's hardware database first"
+    },
+    "privacy_security_notes": "Widely used specifically to replace router manufacturer firmware for better security update support and control over what the router actually does.",
+    "live_usb": "Not applicable — this is embedded router firmware, not a live-bootable desktop OS",
+    "vm_support": "Yes, an x86 virtual-machine target exists for testing/use as a router VM",
+    "installation_difficulty": "Moderate-hard — device-specific flashing procedure; must match the exact hardware model and revision",
+    "why_it_exists": "Built to replace stock router firmware with a full, extensible Linux-based system offering a real package manager and far more configurability.",
+    "who_its_for": "Networking enthusiasts and homelab users wanting full control over router/firewall functionality.",
+    "what_makes_it_different": "A genuinely writable, package-manageable Linux filesystem on routers, versus the typically locked-down firmware most routers ship with.",
+    "links": {
+      "official_website": "https://openwrt.org/",
+      "download": "https://firmware-selector.openwrt.org/",
+      "documentation": "https://openwrt.org/docs/start",
+      "installation_guide": "https://openwrt.org/docs/guide-quick-start/start",
+      "release_notes": "https://openwrt.org/releases/start",
+      "source_repository": "https://github.com/openwrt/openwrt",
+      "checksums": "SHA256 checksums provided by the firmware selector tool",
+      "forums_community": "https://forum.openwrt.org/",
+      "mirrors": "https://downloads.openwrt.org/"
+    },
+    "related_os": [],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "pfsense-opnsense"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "parrot-os",
+    "name": "Parrot OS",
+    "official_name": "Parrot Security OS",
+    "tagline": "A GNU/Linux distribution for pentesters, security researchers and privacy-aware users.",
+    "family": "Linux / Debian family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Parrot Project community",
+    "desktop_environments": [
+      "MATE (default)",
+      "KDE Plasma option"
+    ],
+    "package_manager": "APT (.deb)",
+    "filesystems": [
+      "ext4"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM (Raspberry Pi)"
+    ],
+    "hardware": {
+      "minimum": "2GB RAM claimed minimum",
+      "recommended": "4GB+ RAM",
+      "laptop_suitability": "Good",
+      "desktop_suitability": "Reasonable as a daily driver, more so than Kali by design",
+      "old_pc_suitability": "Moderate — 'Home' edition is lighter than the full Security edition",
+      "server_suitability": "Not a typical use case",
+      "gaming_suitability": "Not the focus",
+      "education_suitability": "Good, similar space to Kali with a 'Home Edition' for general privacy-focused daily use",
+      "known_trouble": "Same Wi-Fi adapter/monitor-mode caveats as other pentest distros"
+    },
+    "privacy_security_notes": "Includes security/anonymity tools (Tor, AnonSurf) and ships a 'Home Edition' aimed at everyday privacy-conscious use, not just pentesting.",
+    "live_usb": "Yes, with persistence options",
+    "vm_support": "Yes — official VM images provided",
+    "installation_difficulty": "Easy — Debian-derived graphical installer",
+    "why_it_exists": "Created as an alternative to Kali aimed at being lighter and more suitable as a daily-driver system while still bundling security tools.",
+    "who_its_for": "Security researchers and privacy-conscious users who want a system usable both for testing and everyday use.",
+    "what_makes_it_different": "A dedicated 'Home Edition' for general privacy-focused daily use alongside the full Security Edition tool set.",
+    "links": {
+      "official_website": "https://www.parrotsec.org/",
+      "download": "https://www.parrotsec.org/download/",
+      "documentation": "https://www.parrotsec.org/docs/",
+      "installation_guide": "https://www.parrotsec.org/docs/installation-guides/",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/ParrotSec",
+      "checksums": "SHA256 checksums provided with downloads",
+      "forums_community": "https://community.parrotsec.org/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "kali-linux",
+      "debian"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "kali-linux"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "pfsense-opnsense",
+    "name": "pfSense / OPNsense",
+    "official_name": "pfSense CE and OPNsense",
+    "tagline": "FreeBSD-based open-source firewall and router platforms.",
+    "family": "BSD (FreeBSD-based firewall/router appliances)",
+    "status": "ACTIVE",
+    "status_note": "Two related but separately-developed projects (OPNsense forked from pfSense in 2014); both actively maintained",
+    "kernel": "FreeBSD kernel",
+    "foundation": "Netgate (pfSense, commercial + free CE edition) and Deciso (OPNsense, commercial + open)",
+    "desktop_environments": [
+      "Web-based management UI — no traditional desktop"
+    ],
+    "package_manager": "pkg (FreeBSD-based), with each project's own web-managed plugin/package system",
+    "filesystems": [
+      "UFS or ZFS depending on install choice"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "~1GB RAM realistic for small deployments",
+      "recommended": "4GB+ RAM for larger networks/heavier packages (IDS/IPS, etc.)",
+      "laptop_suitability": "Not applicable — a dedicated firewall/router platform",
+      "desktop_suitability": "Not applicable",
+      "old_pc_suitability": "Good — a very common way to repurpose an old PC as a home firewall/router",
+      "server_suitability": "Excellent for its specific purpose: routing and firewalling",
+      "gaming_suitability": "Not applicable",
+      "education_suitability": "Excellent for learning firewall/router administration and FreeBSD-based networking",
+      "known_trouble": "Needs at least two network interfaces for a typical WAN/LAN firewall setup"
+    },
+    "privacy_security_notes": "Self-hosted firewall/router with extensive logging, VPN, and IDS/IPS package options.",
+    "live_usb": "Installer boots from USB but results in an installed appliance",
+    "vm_support": "Yes, commonly virtualized for lab/testing use",
+    "installation_difficulty": "Moderate — text/graphical installer, then web UI for ongoing firewall configuration",
+    "why_it_exists": "pfSense (2004) and its later fork OPNsense (2014) both aim to provide enterprise-grade, free, open-source firewall/router software built on FreeBSD's networking stack.",
+    "who_its_for": "Homelab users and small businesses wanting a full-featured, free firewall/router rather than proprietary/consumer router firmware.",
+    "what_makes_it_different": "Enterprise-style features (VPN, IDS/IPS, traffic shaping, multi-WAN) in a free, web-managed FreeBSD-based package, well beyond typical consumer router firmware.",
+    "links": {
+      "official_website": "https://www.pfsense.org/ , https://opnsense.org/",
+      "download": "https://www.pfsense.org/download/ , https://opnsense.org/download/",
+      "documentation": "https://docs.netgate.com/pfsense/en/latest/ , https://docs.opnsense.org/",
+      "installation_guide": "https://docs.netgate.com/pfsense/en/latest/install/ , https://docs.opnsense.org/manual/install.html",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/pfsense , https://github.com/opnsense",
+      "checksums": "SHA256 checksums provided on each project's download page",
+      "forums_community": "https://forum.netgate.com/ , https://forum.opnsense.org/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "freebsd",
+      "openwrt"
+    ],
+    "predecessor": "freebsd",
+    "successor": "",
+    "alternatives": [
+      "openwrt"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "pop-os",
+    "name": "Pop!_OS",
+    "official_name": "Pop!_OS",
+    "tagline": "An operating system for STEM and creative professionals.",
+    "family": "Linux / Debian-Ubuntu family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "System76 (commercial hardware vendor)",
+    "desktop_environments": [
+      "COSMIC (System76's own desktop, rewritten in Rust; replaced the earlier GNOME-based COSMIC)"
+    ],
+    "package_manager": "APT (.deb) + Flatpak (via Pop!_Shop)",
+    "filesystems": [
+      "ext4 (default)",
+      "Btrfs option"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "4GB RAM realistic minimum for a smooth desktop",
+      "recommended": "8GB+ RAM",
+      "laptop_suitability": "Excellent — built by a hardware vendor (System76) for its own laptops, but installable on other PCs too",
+      "desktop_suitability": "Excellent, particularly praised for NVIDIA GPU driver handling",
+      "old_pc_suitability": "Moderate",
+      "server_suitability": "Not a typical use case",
+      "gaming_suitability": "Very good — a dedicated NVIDIA ISO variant simplifies proprietary driver installation",
+      "education_suitability": "Good, aimed partly at STEM/dev workflows with built-in tiling window management",
+      "known_trouble": "COSMIC desktop was a major rewrite (Rust-based) and some older third-party extensions/theming built for the old GNOME-based Pop!_OS no longer apply"
+    },
+    "privacy_security_notes": "No telemetry by default.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy — polished graphical installer with a distinct disk-encryption-by-default flow",
+    "why_it_exists": "Built by System76 to ship on their own laptops/desktops and to give developers and creative professionals a polished, tiling-capable desktop.",
+    "who_its_for": "Developers, STEM/creative professionals, and System76 hardware owners wanting a polished, keyboard-driven workflow.",
+    "what_makes_it_different": "The custom COSMIC desktop environment (built in Rust) with built-in tiling window management, and first-class NVIDIA driver support.",
+    "links": {
+      "official_website": "https://pop.system76.com/",
+      "download": "https://pop.system76.com/",
+      "documentation": "https://support.system76.com/",
+      "installation_guide": "https://support.system76.com/articles/install-pop/",
+      "release_notes": "https://github.com/pop-os/pop/releases",
+      "source_repository": "https://github.com/pop-os",
+      "checksums": "SHA256 sums listed on the download page",
+      "forums_community": "https://chat.pop-os.org/ , https://github.com/pop-os/pop/discussions",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "ubuntu",
+      "debian"
+    ],
+    "predecessor": "ubuntu",
+    "successor": "",
+    "alternatives": [
+      "zorin-os",
+      "ubuntu"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "proxmox-ve",
+    "name": "Proxmox VE",
+    "official_name": "Proxmox Virtual Environment",
+    "tagline": "An open-source server virtualization management platform.",
+    "family": "Linux / Debian family (virtualization appliance)",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux (Debian-based, with a custom KVM-tuned kernel)",
+    "foundation": "Proxmox Server Solutions GmbH (commercial, with a free/open edition)",
+    "desktop_environments": [
+      "Web-based management UI — no traditional desktop; managed remotely"
+    ],
+    "package_manager": "APT (.deb), Debian-based under the hood",
+    "filesystems": [
+      "ZFS, Btrfs, LVM-thin, ext4 — flexible storage backends"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "~2GB RAM for basic testing; production use needs far more",
+      "recommended": "16GB+ RAM, server-grade CPU with virtualization extensions, ECC RAM recommended for ZFS",
+      "laptop_suitability": "Not intended for laptops — a server hypervisor platform",
+      "desktop_suitability": "Not a desktop OS at all",
+      "old_pc_suitability": "Usable on older server-class hardware for homelab use, with reduced VM capacity",
+      "server_suitability": "Excellent — this is its entire purpose, a widely used home-lab and small-business hypervisor",
+      "gaming_suitability": "Not applicable (though GPU passthrough to gaming VMs is a popular homelab use case)",
+      "education_suitability": "Excellent for learning virtualization/hypervisor concepts",
+      "known_trouble": "Needs CPU virtualization extensions (VT-x/AMD-V) enabled in firmware; GPU passthrough setup can be technically involved"
+    },
+    "privacy_security_notes": "Self-hosted; no cloud dependency required for the free/open edition.",
+    "live_usb": "Installer boots from USB, but the result is an installed hypervisor host, not a typical live desktop session",
+    "vm_support": "This IS the virtualization platform — it hosts VMs and LXC containers as its core function",
+    "installation_difficulty": "Moderate — graphical Debian-based installer, but real use requires networking/storage planning",
+    "why_it_exists": "Built to give a free, open-source alternative to commercial hypervisor platforms (like VMware ESXi) for running and managing VMs and containers.",
+    "who_its_for": "Homelab enthusiasts and small businesses wanting a full-featured, free hypervisor with a web management UI.",
+    "what_makes_it_different": "Combines KVM (full VMs) and LXC (lightweight containers) under one web-managed platform, with a genuinely free, fully-featured community edition.",
+    "links": {
+      "official_website": "https://www.proxmox.com/en/proxmox-virtual-environment/overview",
+      "download": "https://www.proxmox.com/en/downloads",
+      "documentation": "https://pve.proxmox.com/pve-docs/",
+      "installation_guide": "https://pve.proxmox.com/wiki/Installation",
+      "release_notes": "https://pve.proxmox.com/wiki/Roadmap",
+      "source_repository": "https://git.proxmox.com/",
+      "checksums": "SHA256 checksums provided on the download page",
+      "forums_community": "https://forum.proxmox.com/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "truenas",
+      "debian"
+    ],
+    "predecessor": "debian",
+    "successor": "",
+    "alternatives": [
+      "truenas",
+      "openmediavault"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "puppy-linux",
+    "name": "Puppy Linux",
+    "official_name": "Puppy Linux",
+    "tagline": "A collection of fast, small, family-friendly Linux distributions.",
+    "family": "Linux / independent (multiple builds/'puplets')",
+    "status": "ACTIVE",
+    "status_note": "A federation of related builds rather than one single project; activity varies by puplet",
+    "kernel": "Linux",
+    "foundation": "Puppy Linux community",
+    "desktop_environments": [
+      "JWM / Openbox — lightweight window managers"
+    ],
+    "package_manager": "PET/SFS packages, plus builds based on Ubuntu/Debian/Slackware repos depending on the 'puplet'",
+    "filesystems": [
+      "ext4; runs largely from RAM"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "i386"
+    ],
+    "hardware": {
+      "minimum": "~256MB RAM claimed (varies by puplet)",
+      "recommended": "512MB-1GB RAM",
+      "laptop_suitability": "Good on older laptops",
+      "desktop_suitability": "Moderate — very minimal by design",
+      "old_pc_suitability": "Excellent — one of the most extreme lightweight options, can run entirely in RAM from a USB stick",
+      "server_suitability": "Not a typical use case",
+      "gaming_suitability": "Poor — not the focus",
+      "education_suitability": "Good for learning how a minimal Linux system boots and runs from RAM",
+      "known_trouble": "Different 'puplets' (builds) vary a lot in package compatibility, which can confuse newcomers about which to download"
+    },
+    "privacy_security_notes": "No telemetry; runs mostly as root by tradition on older versions, later versions moved toward non-root operation for safety.",
+    "live_usb": "Yes — this is a core design goal, boots entirely into RAM",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy to run live; 'frugal install' to disk is a distinct, well-documented lightweight installation method",
+    "why_it_exists": "Created 2003 by Barry Kauler to boot entirely into RAM for speed, making a full desktop usable on very old or resource-constrained PCs.",
+    "who_its_for": "People wanting to revive very old hardware or run a fast, disposable desktop from a USB stick.",
+    "what_makes_it_different": "Runs almost entirely from RAM even on live media, extremely small ISOs (often under a few hundred MB), and a distinctive 'frugal install' method that doesn't require a full disk partition.",
+    "links": {
+      "official_website": "https://puppylinux-woof-ce.github.io/",
+      "download": "https://puppylinux-woof-ce.github.io/",
+      "documentation": "https://wikka.puppylinux.com/",
+      "installation_guide": "https://wikka.puppylinux.com/Install",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/puppylinux-woof-CE",
+      "checksums": "MD5SUMS provided per download",
+      "forums_community": "https://www.forum.puppylinux.com/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "tiny-core"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "tiny-core",
+      "antix"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "q4os",
+    "name": "Q4OS",
+    "official_name": "Q4OS",
+    "tagline": "A fast and stable Linux distribution focused on security, reliability and long-term support.",
+    "family": "Linux / Debian family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "Trinity Desktop Environment (TDE) and KDE Plasma editions, both lightweight-focused"
+    ],
+    "package_manager": "APT (.deb)",
+    "filesystems": [
+      "ext4"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "i386 (32-bit edition available)"
+    ],
+    "hardware": {
+      "minimum": "~1GB RAM claimed for the lightweight TDE edition",
+      "recommended": "2GB+ RAM",
+      "laptop_suitability": "Good",
+      "desktop_suitability": "Good, particularly for Windows-like familiar layouts",
+      "old_pc_suitability": "Very good — explicitly aimed at older hardware, including 32-bit systems",
+      "server_suitability": "Not a typical use case",
+      "gaming_suitability": "Limited — not the focus",
+      "education_suitability": "Good for a low-friction, Windows-like Linux introduction",
+      "known_trouble": "Trinity Desktop Environment (a KDE 3 continuation) is less mainstream/documented than modern KDE Plasma"
+    },
+    "privacy_security_notes": "No telemetry.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy — graphical installer with a distinctive 'Desktop Profiler' for choosing how much software to preinstall",
+    "why_it_exists": "Built on Debian to give older or resource-limited PCs a fast, Windows-familiar desktop with long-term support.",
+    "who_its_for": "Users reviving older hardware who want a Windows-like layout without heavy resource use.",
+    "what_makes_it_different": "Ships the Trinity Desktop Environment (a continuation of the classic KDE 3 codebase) as a genuinely lightweight, still-actively-developed option alongside modern KDE Plasma.",
+    "links": {
+      "official_website": "https://q4os.org/",
+      "download": "https://q4os.org/downloads1.html",
+      "documentation": "https://q4os.org/tutorials.html",
+      "installation_guide": "https://q4os.org/tutorials.html",
+      "release_notes": "Not verified",
+      "source_repository": "Not verified",
+      "checksums": "Provided on the download page",
+      "forums_community": "https://forum.q4os.org/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "mx-linux",
+      "debian"
+    ],
+    "predecessor": "debian",
+    "successor": "",
+    "alternatives": [
+      "mx-linux",
+      "linux-lite"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "reactos",
+    "name": "ReactOS",
+    "official_name": "ReactOS",
+    "tagline": "A free, open-source operating system for x86/x64 personal computers, aiming for binary compatibility with Windows.",
+    "family": "Alternative / Windows-compatible",
+    "status": "EXPERIMENTAL",
+    "status_note": "Explicitly labeled alpha-quality by its own project; not recommended as a daily-driver OS",
+    "kernel": "Custom kernel implementing the Windows NT architecture from scratch (not Linux, not Windows source)",
+    "foundation": "ReactOS Foundation / community",
+    "desktop_environments": [
+      "Windows-like native shell (mimics classic Windows UI)"
+    ],
+    "package_manager": "ReactOS Application Manager (RAPPS)",
+    "filesystems": [
+      "FAT, NTFS (read/write support, still maturing)"
+    ],
+    "cpu_architectures": [
+      "x86 (32-bit primary target)",
+      "x86_64 experimental"
+    ],
+    "hardware": {
+      "minimum": "96MB RAM claimed minimum by the project",
+      "recommended": "Modest, low-spec x86 PC; the project targets similar hardware to Windows XP/2003-era systems",
+      "laptop_suitability": "Poor to limited — driver support (Wi-Fi, modern GPUs) is very immature",
+      "desktop_suitability": "Not recommended for daily use — the project itself calls it alpha software",
+      "old_pc_suitability": "Best fit currently, given the era of hardware/drivers it can target",
+      "server_suitability": "Not applicable, still alpha-stage",
+      "gaming_suitability": "Poor — many Windows games/apps still don't run reliably",
+      "education_suitability": "Excellent for studying OS/kernel design and Windows-compatibility engineering",
+      "known_trouble": "Officially alpha-quality: expect crashes, missing drivers, and incomplete application compatibility"
+    },
+    "privacy_security_notes": "No telemetry; project is explicit that it is not yet production-secure or stable.",
+    "live_usb": "Yes, a Live CD mode exists for testing before install",
+    "vm_support": "Yes — the officially recommended way to try it safely",
+    "installation_difficulty": "Moderate but risky — project explicitly warns not to use it on a machine with important data",
+    "why_it_exists": "Aims to be a free operating system that is binary-compatible with existing Windows applications and drivers, reimplementing the Windows NT architecture from scratch (no Microsoft source code used).",
+    "who_its_for": "Developers and enthusiasts studying OS compatibility engineering, or people wanting to run old Windows software/drivers on a free OS — experimentally, not in production.",
+    "what_makes_it_different": "The only major open-source project attempting real binary compatibility with Windows NT-family drivers and applications, not just a Wine-style compatibility layer on top of another OS.",
+    "links": {
+      "official_website": "https://reactos.org/",
+      "download": "https://reactos.org/download/",
+      "documentation": "https://reactos.org/wiki/Main_Page",
+      "installation_guide": "https://reactos.org/wiki/Installing_ReactOS",
+      "release_notes": "https://reactos.org/project-news/",
+      "source_repository": "https://github.com/reactos/reactos",
+      "checksums": "Not verified",
+      "forums_community": "https://reactos.org/forum/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "haiku",
+      "freedos"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "redox-os",
+    "name": "Redox OS",
+    "official_name": "Redox",
+    "tagline": "A Unix-like operating system written in Rust.",
+    "family": "Alternative / hobby-research OS",
+    "status": "EXPERIMENTAL",
+    "status_note": "",
+    "kernel": "Custom microkernel written in Rust (not Linux)",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "Orbital — Redox's own native display server/desktop"
+    ],
+    "package_manager": "Redox's own package management tooling (in active development)",
+    "filesystems": [
+      "RedoxFS — its own copy-on-write filesystem inspired by ZFS"
+    ],
+    "cpu_architectures": [
+      "x86_64 primarily; ARM work in progress"
+    ],
+    "hardware": {
+      "minimum": "Best run in a VM/emulator for most users",
+      "recommended": "QEMU or similar virtualization environment",
+      "laptop_suitability": "Not a realistic target yet — real-hardware driver support is limited",
+      "desktop_suitability": "Not intended for daily production use",
+      "old_pc_suitability": "Not a target use case",
+      "server_suitability": "Not applicable at this stage",
+      "gaming_suitability": "Not applicable",
+      "education_suitability": "Excellent for studying microkernel design and memory-safe (Rust) OS development",
+      "known_trouble": "Still under active, early-stage development; expect missing drivers and incomplete features"
+    },
+    "privacy_security_notes": "A stated project goal is memory safety by construction, since it's written in Rust rather than C.",
+    "live_usb": "Yes, downloadable live images exist for testing",
+    "vm_support": "Yes — QEMU is the standard recommended way to run it",
+    "installation_difficulty": "Moderate for trying live images; hard for a full install given the project's early stage",
+    "why_it_exists": "Built to explore whether a Unix-like microkernel OS written entirely in memory-safe Rust can be practical, rather than the traditional C-based kernels of Linux/BSD.",
+    "who_its_for": "Systems programmers and Rust enthusiasts interested in microkernel and memory-safe OS design.",
+    "what_makes_it_different": "A true microkernel (unlike Linux's monolithic design) written in Rust for memory safety, with its own filesystem (RedoxFS) and display server (Orbital).",
+    "links": {
+      "official_website": "https://www.redox-os.org/",
+      "download": "https://www.redox-os.org/download/",
+      "documentation": "https://doc.redox-os.org/book/",
+      "installation_guide": "https://doc.redox-os.org/book/ch02-00-building-redox.html",
+      "release_notes": "https://www.redox-os.org/news/",
+      "source_repository": "https://gitlab.redox-os.org/redox-os/redox",
+      "checksums": "Not verified",
+      "forums_community": "https://matrix.to/#/#redox:matrix.org (per project docs)",
+      "mirrors": "Not verified"
+    },
+    "related_os": [],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "serenityos",
+      "haiku"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "serenityos",
+    "name": "SerenityOS",
+    "official_name": "SerenityOS",
+    "tagline": "A love letter to '90s user interfaces with a modern twist.",
+    "family": "Alternative / hobby OS",
+    "status": "EXPERIMENTAL",
+    "status_note": "Explicitly a hobbyist project; the project does not provide stable end-user releases in the traditional sense — it's built from source by contributors",
+    "kernel": "Custom Unix-like kernel written from scratch in C++ (not Linux)",
+    "foundation": "Independent community project (started by Andreas Kling)",
+    "desktop_environments": [
+      "Native SerenityOS desktop, a from-scratch GUI stack including its own browser engine (Ladybird, now spun off as its own project)"
+    ],
+    "package_manager": "Ports system (source-based, similar in spirit to BSD ports)",
+    "filesystems": [
+      "Its own custom filesystem work plus ext2 support"
+    ],
+    "cpu_architectures": [
+      "x86_64 primarily; some AArch64 work in progress"
+    ],
+    "hardware": {
+      "minimum": "Runs comfortably in a modest VM; not really targeted at bare-metal installs for typical users",
+      "recommended": "A VM (QEMU) is the standard way to run it",
+      "laptop_suitability": "Not a realistic target — no broad real-hardware driver support",
+      "desktop_suitability": "Not intended for production/daily desktop use",
+      "old_pc_suitability": "Not a target use case",
+      "server_suitability": "Not applicable",
+      "gaming_suitability": "Not applicable",
+      "education_suitability": "Excellent — widely followed as an educational, from-scratch OS-development project with an active YouTube/streaming community",
+      "known_trouble": "No official pre-built installers for end users in the traditional sense; typically built from source"
+    },
+    "privacy_security_notes": "Not applicable — a hobby/educational OS, not intended for production security use.",
+    "live_usb": "Not the primary intended usage path",
+    "vm_support": "Yes — running under QEMU is the standard, documented way to try SerenityOS",
+    "installation_difficulty": "Hard — typically built from source following the project's documented build instructions",
+    "why_it_exists": "Started as a hobby project to build a complete, from-scratch Unix-like OS with a nostalgic 1990s-style GUI, and became a well-known example of live-streamed/open OS development.",
+    "who_its_for": "OS-development enthusiasts and programmers who want to study or contribute to a from-scratch kernel and GUI stack.",
+    "what_makes_it_different": "Everything — kernel, GUI toolkit, and originally its own web browser engine (Ladybird) — was written from scratch by the community, with heavy emphasis on learning and livestreamed development.",
+    "links": {
+      "official_website": "https://www.serenityos.org/",
+      "download": "Not verified",
+      "documentation": "https://github.com/SerenityOS/serenity/blob/master/Documentation/",
+      "installation_guide": "https://github.com/SerenityOS/serenity/blob/master/Documentation/BuildInstructions.md",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/SerenityOS/serenity",
+      "checksums": "Not verified",
+      "forums_community": "https://discord.gg/serenityos (per project README)",
+      "mirrors": "Not verified"
+    },
+    "related_os": [],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "haiku",
+      "redox-os"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "singularity",
+    "name": "Singularity",
+    "official_name": "Microsoft Research Singularity",
+    "tagline": "Microsoft's own experiment in throwing out the OS rulebook — no C, no hardware memory protection, all type-safety.",
+    "family": "Language-based / research microkernel",
+    "status": "ARCHIVED",
+    "status_note": "Research project active 2003–2008 (RDK releases through 2008); Microsoft Research still hosts the project page \"for reference and archival purposes.\" The download host, CodePlex, was shut down by Microsoft in 2017, so the original RDK installer is no longer available from Microsoft.",
+    "kernel": "Custom microkernel written mostly in Sing# (a research extension of C#), not C — the whole point of the project",
+    "foundation": "Microsoft Research",
+    "desktop_environments": [
+      "Command-line interface only — this was a systems-research prototype, not a desktop product"
+    ],
+    "package_manager": "Not applicable — research prototype",
+    "filesystems": [
+      "Custom research filesystem support — not documented for general use"
+    ],
+    "cpu_architectures": [
+      "x86",
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "Standard-ish x86 PC of the mid-2000s, or a virtual machine (originally documented for Microsoft Virtual PC)",
+      "recommended": "A VM — this was never intended to run production hardware",
+      "laptop_suitability": "Not its use case",
+      "desktop_suitability": "Not its use case — a research prototype, never a shipping product",
+      "old_pc_suitability": "Not applicable",
+      "server_suitability": "Not applicable",
+      "gaming_suitability": "Not applicable",
+      "education_suitability": "Excellent as a case study in language-based OS security — Software Isolated Processes (SIPs) replaced hardware memory protection with compiler-enforced type safety",
+      "known_trouble": "The original RDK 2.0 installer was hosted on CodePlex, which Microsoft shut down in 2017 — no official current download exists; only the research papers and project page remain live"
+    },
+    "privacy_security_notes": "The project's entire premise was security/dependability through language-level isolation (Software Isolated Processes) rather than hardware-enforced protection domains — an architectural research question, not a hardened production system.",
+    "live_usb": "Not available — no current official installable image",
+    "vm_support": "Originally documented to run under Microsoft Virtual PC; whether the RDK installer survives on third-party archive mirrors was not verified for this build",
+    "installation_difficulty": "Not applicable — no official download currently available",
+    "why_it_exists": "Microsoft Research asked what a software platform would look like if dependability were the primary design goal from day one, rather than retrofitted — the codebase and ideas later fed into the unreleased Midori project.",
+    "who_its_for": "OS researchers and students studying alternatives to hardware-enforced process isolation.",
+    "what_makes_it_different": "Nearly the entire stack — kernel included — was written in type-safe managed code, using compiler guarantees instead of CPU ring separation to isolate processes.",
+    "links": {
+      "official_website": "https://www.microsoft.com/en-us/research/project/singularity/",
+      "download": "Not available — the CodePlex host for the RDK installer was shut down by Microsoft in 2017",
+      "documentation": "https://www.microsoft.com/en-us/research/publication/an-overview-of-the-singularity-project/",
+      "installation_guide": "Not available",
+      "release_notes": "Not verified",
+      "source_repository": "Not available — formerly on CodePlex (shut down)",
+      "checksums": "Not applicable",
+      "forums_community": "Not available",
+      "mirrors": "Not verified"
+    },
+    "related_os": [],
+    "predecessor": "",
+    "successor": "Midori (Microsoft Research, never publicly released)",
+    "alternatives": [
+      "redox-os",
+      "serenityos"
+    ],
+    "last_verified": "2026-08 (Claude training + live web search during this build — verify before use)"
+  },
+  {
+    "id": "steamos",
+    "name": "SteamOS",
+    "official_name": "SteamOS",
+    "tagline": "Valve's Linux-based gaming operating system.",
+    "family": "Linux / Arch family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Valve Corporation (commercial)",
+    "desktop_environments": [
+      "A custom 'Big Picture'-style gaming interface (Gamescope); KDE Plasma as the desktop mode"
+    ],
+    "package_manager": "Pacman (Arch-based) with an immutable, read-only root filesystem for stability",
+    "filesystems": [
+      "Btrfs (with an A/B, read-only immutable root design)"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "Officially built for and shipped on Valve's Steam Deck; broader third-party PC support exists but is less officially guaranteed",
+      "recommended": "Steam Deck hardware, or comparable AMD-GPU-based x86_64 gaming PCs for community installs",
+      "laptop_suitability": "Purpose-built for the Steam Deck handheld; installable on other laptops with more effort/less official support",
+      "desktop_suitability": "Growing third-party desktop/PC install support, but officially prioritized for Valve's own devices",
+      "old_pc_suitability": "Poor — targets modern gaming-capable hardware",
+      "server_suitability": "Not applicable",
+      "gaming_suitability": "Excellent — this is the entire purpose of the OS, built around Proton for Windows-game compatibility",
+      "education_suitability": "Moderate — interesting as a case study in immutable OS design",
+      "known_trouble": "Historically strongest on AMD GPUs; NVIDIA GPU support on non-Deck PCs has been more limited"
+    },
+    "privacy_security_notes": "Standard consumer-gaming-OS posture; not privacy-focused specifically.",
+    "live_usb": "Yes, official recovery/install images provided by Valve",
+    "vm_support": "Limited — not the primary intended use case, though technically possible",
+    "installation_difficulty": "Easy on Steam Deck (preinstalled); moderate on third-party PCs using Valve's recovery image",
+    "why_it_exists": "Built by Valve to power the Steam Deck and to reduce reliance on Windows for PC gaming, centered on the Proton compatibility layer for running Windows games.",
+    "who_its_for": "Steam Deck owners, and PC gamers wanting a console-like, gaming-focused Linux experience.",
+    "what_makes_it_different": "An immutable, read-only base filesystem (like ChromeOS's model) for reliability, paired with Proton to run a huge library of Windows-only games.",
+    "links": {
+      "official_website": "https://store.steampowered.com/steamos",
+      "download": "https://store.steampowered.com/steamos/buildyourown",
+      "documentation": "https://help.steampowered.com/en/faqs/view/1B71-EDF2-EB6D-2FB3",
+      "installation_guide": "https://help.steampowered.com/en/faqs/view/1B71-EDF2-EB6D-2FB3",
+      "release_notes": "Not verified",
+      "source_repository": "Not verified",
+      "checksums": "Not verified",
+      "forums_community": "https://steamcommunity.com/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "bazzite",
+      "arch-linux"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "bazzite",
+      "nobara"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "tails",
+    "name": "Tails",
+    "official_name": "The Amnesic Incognito Live System (Tails)",
+    "tagline": "Privacy for anyone anywhere.",
+    "family": "Linux / Debian family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Tails project, supported by the Tor Project and donations",
+    "desktop_environments": [
+      "GNOME (customized)"
+    ],
+    "package_manager": "APT (mostly not user-facing; the system is meant to run live, not be customized long-term)",
+    "filesystems": [
+      "Runs from RAM; leaves no trace on the host by design"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "2GB RAM (official minimum)",
+      "recommended": "4GB+ RAM for smooth Tor Browser use",
+      "laptop_suitability": "Good, meant to be run from USB on any compatible PC",
+      "desktop_suitability": "Not intended as a daily-driver installed OS by design",
+      "old_pc_suitability": "Moderate — needs enough RAM for Tor Browser to run comfortably",
+      "server_suitability": "Not applicable — this is a privacy-live-OS, not a server distro",
+      "gaming_suitability": "Not applicable, out of scope by design",
+      "education_suitability": "Good for teaching operational security / anonymity concepts",
+      "known_trouble": "All traffic is forced through Tor; regular browsing speed is slower and some sites block Tor exit nodes"
+    },
+    "privacy_security_notes": "Explicitly designed for anonymity: routes all internet traffic through Tor, leaves no trace on the host computer, and includes encryption tools by default.",
+    "live_usb": "Yes — this is the entire point of the project, not installed to a hard disk in the traditional sense",
+    "vm_support": "Discouraged for full anonymity guarantees, though technically possible; official docs explain the trade-offs",
+    "installation_difficulty": "Easy to boot; the official 'Tails Installer' process from another Tails USB is specific and should be followed exactly",
+    "why_it_exists": "Built to give journalists, activists, and anyone needing strong privacy a way to use any computer without leaving a trace and with all traffic anonymized via Tor.",
+    "who_its_for": "Journalists, activists, and privacy-conscious users needing strong anonymity guarantees.",
+    "what_makes_it_different": "Amnesic by design (forgets everything after shutdown unless explicitly told to persist), and forces all network traffic through Tor.",
+    "links": {
+      "official_website": "https://tails.net/",
+      "download": "https://tails.net/install/",
+      "documentation": "https://tails.net/doc/",
+      "installation_guide": "https://tails.net/install/",
+      "release_notes": "https://tails.net/news/",
+      "source_repository": "https://gitlab.tails.boum.org/tails/tails",
+      "checksums": "Verification is built into the official installer/download flow via OpenPGP signatures",
+      "forums_community": "https://tails.net/support/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "whonix",
+      "debian"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "whonix",
+      "kali-linux"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "tiny-core",
+    "name": "Tiny Core Linux",
+    "official_name": "Tiny Core Linux",
+    "tagline": "A very small, minimal Linux GUI desktop.",
+    "family": "Linux / independent",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Independent (Team Tiny Core)",
+    "desktop_environments": [
+      "FLTK/FLWM-based minimal GUI ('TinyCore'); 'Core' edition is text-only with no GUI at all"
+    ],
+    "package_manager": "'TCE' extensions (small compressed .tcz packages)",
+    "filesystems": [
+      "Runs from RAM; supports ext4 for persistence"
+    ],
+    "cpu_architectures": [
+      "x86",
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "~46MB total download for the 'Core' text-only edition; ~128MB RAM realistic",
+      "recommended": "Varies enormously by how many extensions are added",
+      "laptop_suitability": "Good on very old laptops",
+      "desktop_suitability": "Minimal by design — extremely bare-bones without added extensions",
+      "old_pc_suitability": "Excellent — one of the smallest usable Linux systems that exists",
+      "server_suitability": "Occasionally used for extremely lightweight embedded/appliance roles",
+      "gaming_suitability": "Poor — not the focus",
+      "education_suitability": "Excellent for learning exactly what a minimal Linux system needs to boot",
+      "known_trouble": "Very manual — almost nothing is included by default, everything is an added extension"
+    },
+    "privacy_security_notes": "No telemetry.",
+    "live_usb": "Yes, core design goal, boots to RAM in seconds",
+    "vm_support": "Yes",
+    "installation_difficulty": "Moderate — simple to boot live, but building a usable system means manually adding extensions",
+    "why_it_exists": "Created to be one of the smallest functional Linux systems possible, letting users build up only exactly what they need.",
+    "who_its_for": "Minimalists, embedded-system tinkerers, and people with extremely old or resource-limited hardware.",
+    "what_makes_it_different": "Extreme minimalism — the base ISO can be under 20MB for the CorePlus/Core editions, with everything else added as small on-demand extensions.",
+    "links": {
+      "official_website": "http://tinycorelinux.net/",
+      "download": "http://tinycorelinux.net/downloads.html",
+      "documentation": "http://tinycorelinux.net/faq.html",
+      "installation_guide": "http://tinycorelinux.net/book.html",
+      "release_notes": "Not verified",
+      "source_repository": "Not verified",
+      "checksums": "MD5 checksums on downloads page",
+      "forums_community": "http://forum.tinycorelinux.net/",
+      "mirrors": "http://tinycorelinux.net/mirrors.html"
+    },
+    "related_os": [
+      "puppy-linux"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "puppy-linux",
+      "alpine-linux"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "truenas",
+    "name": "TrueNAS",
+    "official_name": "TrueNAS (CORE and SCALE editions)",
+    "tagline": "Open-source storage software for building network-attached storage.",
+    "family": "BSD (CORE) / Linux (SCALE)",
+    "status": "ACTIVE",
+    "status_note": "Two parallel editions: TrueNAS CORE (FreeBSD-based) and TrueNAS SCALE (Debian-based); check which fits your needs",
+    "kernel": "FreeBSD kernel (CORE) or Linux (SCALE)",
+    "foundation": "iXsystems (commercial, with a free community edition)",
+    "desktop_environments": [
+      "Web-based management UI — no traditional desktop"
+    ],
+    "package_manager": "Appliance-managed; SCALE uses Debian packages/apps under the hood via a web UI",
+    "filesystems": [
+      "ZFS — this is the core feature of the whole platform"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "8GB RAM commonly cited as a practical minimum for ZFS-based NAS use",
+      "recommended": "16GB+ RAM (more if using ZFS deduplication), ECC RAM strongly recommended",
+      "laptop_suitability": "Not intended for laptops — a dedicated NAS/storage server platform",
+      "desktop_suitability": "Not a desktop OS at all",
+      "old_pc_suitability": "Usable for a homelab NAS on older server-class hardware with enough RAM/disk bays",
+      "server_suitability": "Excellent — this is its entire purpose",
+      "gaming_suitability": "Not applicable (though SCALE can also run some app/container workloads)",
+      "education_suitability": "Excellent for learning ZFS, RAID concepts, and NAS administration",
+      "known_trouble": "ZFS strongly prefers ECC RAM and enough RAM overall; underpowered hardware will bottleneck heavily"
+    },
+    "privacy_security_notes": "Self-hosted storage; encryption at rest and in transit is configurable.",
+    "live_usb": "Installer boots from USB but results in an installed appliance, not a live desktop",
+    "vm_support": "Yes, both editions run in VMs for testing; SCALE also supports running VMs/apps within TrueNAS itself",
+    "installation_difficulty": "Moderate — graphical installer, but real NAS deployment needs disk/RAID planning",
+    "why_it_exists": "Built to make enterprise-grade ZFS storage available as free, open-source NAS software, evolving from the earlier FreeNAS project.",
+    "who_its_for": "Homelab and small-business users wanting reliable, ZFS-backed network storage with a full web UI.",
+    "what_makes_it_different": "Deep ZFS integration (snapshots, checksums, self-healing) as the core storage layer, plus a choice between a FreeBSD base (CORE) or Linux base (SCALE).",
+    "links": {
+      "official_website": "https://www.truenas.com/",
+      "download": "https://www.truenas.com/download-truenas-core/",
+      "documentation": "https://www.truenas.com/docs/",
+      "installation_guide": "https://www.truenas.com/docs/core/gettingstarted/install/",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/truenas",
+      "checksums": "Provided on the download page",
+      "forums_community": "https://www.truenas.com/community/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "freebsd",
+      "proxmox-ve"
+    ],
+    "predecessor": "FreeNAS / freebsd",
+    "successor": "",
+    "alternatives": [
+      "openmediavault",
+      "proxmox-ve"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "ubuntu",
+    "name": "Ubuntu",
+    "official_name": "Ubuntu",
+    "tagline": "Linux for human beings.",
+    "family": "Linux / Debian family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Canonical Ltd. (commercial, with community involvement)",
+    "desktop_environments": [
+      "GNOME (default)"
+    ],
+    "package_manager": "APT (.deb) + Snap",
+    "filesystems": [
+      "ext4 (default)",
+      "ZFS (experimental option)",
+      "Btrfs"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM64",
+      "others (server/cloud images)"
+    ],
+    "hardware": {
+      "minimum": "~4GB RAM, 25GB disk (official desktop recommendation)",
+      "recommended": "8GB+ RAM, SSD",
+      "laptop_suitability": "Very good — strong OEM/manufacturer certification program",
+      "desktop_suitability": "Excellent, the most common beginner entry point to Linux",
+      "old_pc_suitability": "Weaker with default GNOME; use official flavors (Xubuntu, Lubuntu) for older hardware",
+      "server_suitability": "Excellent — very common cloud/server distribution",
+      "gaming_suitability": "Good — official Steam support, common target for proprietary drivers",
+      "education_suitability": "Very good; huge amount of beginner documentation",
+      "known_trouble": "Snap packaging is a point of controversy for some users; very old PCs (pre-2010) may struggle with default GNOME"
+    },
+    "privacy_security_notes": "Historically shipped Amazon search lens (removed); current releases have no ad-injection by default. Canonical provides security updates.",
+    "live_usb": "Yes, official live/install images",
+    "vm_support": "Yes, extremely common",
+    "installation_difficulty": "Easy — one of the most beginner-friendly graphical installers",
+    "why_it_exists": "Launched 2004 by Canonical to make Debian's technology accessible with predictable release cycles and strong hardware support.",
+    "who_its_for": "Linux newcomers, desktop users, and cloud/server deployments wanting commercial-backed support.",
+    "what_makes_it_different": "Predictable 6-month release cadence plus LTS releases with 5 years of support, strong OEM hardware partnerships, and Canonical's commercial backing.",
+    "links": {
+      "official_website": "https://ubuntu.com/",
+      "download": "https://ubuntu.com/download/desktop",
+      "documentation": "https://help.ubuntu.com/",
+      "installation_guide": "https://ubuntu.com/tutorials/install-ubuntu-desktop",
+      "release_notes": "https://wiki.ubuntu.com/Releases",
+      "source_repository": "https://git.launchpad.net/",
+      "checksums": "SHA256SUMS listed on ubuntu.com download pages",
+      "forums_community": "https://discourse.ubuntu.com/",
+      "mirrors": "https://launchpad.net/ubuntu/+cdmirrors"
+    },
+    "related_os": [
+      "debian",
+      "kubuntu",
+      "xubuntu",
+      "lubuntu",
+      "linux-mint",
+      "pop-os"
+    ],
+    "predecessor": "debian",
+    "successor": "",
+    "alternatives": [
+      "fedora",
+      "linux-mint",
+      "pop-os"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "void-linux",
+    "name": "Void Linux",
+    "official_name": "Void Linux",
+    "tagline": "An independent, rolling-release Linux distribution.",
+    "family": "Linux / independent",
+    "status": "ACTIVE",
+    "status_note": "Slower development pace after loss of core contributors in 2020; still receiving updates",
+    "kernel": "Linux",
+    "foundation": "Independent community project",
+    "desktop_environments": [
+      "None by default; installable: Xfce, KDE Plasma, GNOME, MATE, and more"
+    ],
+    "package_manager": "XBPS (Void's own binary package system)",
+    "filesystems": [
+      "ext4 (default)",
+      "ZFS, Btrfs options"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM (Raspberry Pi supported)"
+    ],
+    "hardware": {
+      "minimum": "512MB RAM for base system",
+      "recommended": "2GB+ RAM for a desktop",
+      "laptop_suitability": "Moderate; manual configuration needed for some hardware",
+      "desktop_suitability": "Good for experienced users",
+      "old_pc_suitability": "Very good — minimal base, no systemd overhead",
+      "server_suitability": "Good — lightweight, runit-based init",
+      "gaming_suitability": "Moderate — smaller repo than Arch/Fedora, more manual setup",
+      "education_suitability": "Good for learning an init system other than systemd",
+      "known_trouble": "Smaller repository and community than Arch/Debian means more manual package building via xbps-src at times"
+    },
+    "privacy_security_notes": "No telemetry.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Moderate-hard — text installer, more assumed knowledge than Ubuntu-style installers",
+    "why_it_exists": "Created 2008 as an independent distro (not a derivative of Debian/Arch/etc.) using runit instead of systemd and its own XBPS package manager.",
+    "who_its_for": "Users who specifically want a non-systemd, independently-built rolling release.",
+    "what_makes_it_different": "Uses runit as its init system rather than systemd, and XBPS is a from-scratch package manager, not a fork of an existing one.",
+    "links": {
+      "official_website": "https://voidlinux.org/",
+      "download": "https://voidlinux.org/download/",
+      "documentation": "https://docs.voidlinux.org/",
+      "installation_guide": "https://docs.voidlinux.org/installation/index.html",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/void-linux",
+      "checksums": "SHA256 files provided with ISO downloads",
+      "forums_community": "https://voidlinux.org/chat/ (IRC/Matrix), https://github.com/void-linux/void-packages/discussions",
+      "mirrors": "https://docs.voidlinux.org/xbps/repositories/mirrors/index.html"
+    },
+    "related_os": [
+      "artix-linux"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "artix-linux",
+      "gentoo",
+      "alpine-linux"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "whonix",
+    "name": "Whonix",
+    "official_name": "Whonix",
+    "tagline": "Anonymous operating system, powered by Tor.",
+    "family": "Linux / Debian family (dual-VM design)",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Whonix / Tor community project",
+    "desktop_environments": [
+      "Xfce (on the Workstation VM)"
+    ],
+    "package_manager": "APT (.deb)",
+    "filesystems": [
+      "ext4"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "2GB+ RAM to comfortably run two VMs (Gateway + Workstation)",
+      "recommended": "8GB+ RAM, since it runs as two virtual machines simultaneously",
+      "laptop_suitability": "Depends on virtualization support and available RAM",
+      "desktop_suitability": "Not a general desktop OS — a dedicated anonymity toolkit",
+      "old_pc_suitability": "Poor — needs enough resources to run two VMs at once",
+      "server_suitability": "Not applicable",
+      "gaming_suitability": "Not applicable, out of scope by design",
+      "education_suitability": "Good for teaching network-isolation-based anonymity architecture",
+      "known_trouble": "Requires a hypervisor (VirtualBox/KVM); not a bare-metal install by design"
+    },
+    "privacy_security_notes": "Splits the system into a Gateway VM (handles all Tor routing) and a Workstation VM (where you work), so even a compromised Workstation can't leak your real IP — a stronger isolation model than a single-VM Tor setup.",
+    "live_usb": "No — Whonix is designed to run as virtual machine images, not typical live USB media",
+    "vm_support": "Yes — this is the native and intended way to run it (VirtualBox, KVM/QEMU officially supported)",
+    "installation_difficulty": "Moderate — import the provided VM images into a supported hypervisor and follow official first-run steps",
+    "why_it_exists": "Built around a two-VM isolation architecture so that even if the 'Workstation' VM is compromised, the attacker still can't learn the user's real IP address.",
+    "who_its_for": "Users wanting strong anonymity with an isolation architecture stronger than a single-machine Tor setup.",
+    "what_makes_it_different": "Gateway/Workstation VM split for defense-in-depth anonymity, versus Tails' single amnesic live system.",
+    "links": {
+      "official_website": "https://www.whonix.org/",
+      "download": "https://www.whonix.org/wiki/Download",
+      "documentation": "https://www.whonix.org/wiki/Documentation",
+      "installation_guide": "https://www.whonix.org/wiki/Install_Overview",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/Whonix",
+      "checksums": "OpenPGP signature verification documented on the download page",
+      "forums_community": "https://forums.whonix.org/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "tails",
+      "debian"
+    ],
+    "predecessor": "",
+    "successor": "",
+    "alternatives": [
+      "tails"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "windows-iot-enterprise-ltsc",
+    "name": "Windows IoT Enterprise LTSC",
+    "official_name": "Windows IoT Enterprise (Long-Term Servicing Channel)",
+    "tagline": "Full Windows, stripped of feature-update churn, for fixed-function devices.",
+    "family": "Windows NT / Windows Embedded",
+    "status": "ACTIVE",
+    "status_note": "Currently shipping (Windows 11 IoT Enterprise LTSC 2024 is the latest release); the rare Windows most people never encounter because it's licensed to device makers, not sold at retail",
+    "kernel": "Windows NT kernel (same as desktop Windows)",
+    "foundation": "Microsoft Corporation — successor branding to \"Windows Embedded\"",
+    "desktop_environments": [
+      "Standard Windows shell, binary-equivalent to Windows Enterprise; can be locked down to a single kiosk app"
+    ],
+    "package_manager": "Windows Update / WSUS / Configuration Manager (same servicing stack as desktop Windows)",
+    "filesystems": [
+      "NTFS, ReFS"
+    ],
+    "cpu_architectures": [
+      "x86_64",
+      "ARM64"
+    ],
+    "hardware": {
+      "minimum": "Broadly the same baseline as desktop Windows 11; varies by device-maker target",
+      "recommended": "Purpose-built embedded/industrial hardware from an authorized Windows IoT device maker",
+      "laptop_suitability": "Not its use case — built for fixed-function devices, not general laptops",
+      "desktop_suitability": "Not its use case",
+      "old_pc_suitability": "Not its use case",
+      "server_suitability": "Not applicable — client OS for embedded devices, not a server OS",
+      "gaming_suitability": "Not its use case",
+      "education_suitability": "Good case study for how Microsoft segments the same NT kernel into very different licensing/servicing models",
+      "known_trouble": "Not available as a retail download — general consumers cannot simply install it without going through an authorized Windows IoT distributor, or the time-limited evaluation ISO"
+    },
+    "privacy_security_notes": "Same security model and update mechanisms as mainstream Windows Enterprise; LTSC channel means a 10-year support window with fewer feature updates.",
+    "live_usb": "Evaluation ISO available for a time-limited 90-day trial in a VM or via USB",
+    "vm_support": "Yes — the official evaluation build is explicitly meant for VM testing",
+    "installation_difficulty": "Moderate for the evaluation ISO; real production licensing requires going through an authorized Windows IoT distributor",
+    "why_it_exists": "Powers ATMs, point-of-sale terminals, medical devices, industrial automation and digital signage — places that need full Windows compatibility but absolutely cannot tolerate the feature-update cadence of consumer Windows.",
+    "who_its_for": "Device makers and integrators building fixed-function, purpose-built hardware that needs a decade of stable servicing.",
+    "what_makes_it_different": "It's genuinely the same NT kernel and binary compatibility as desktop Windows, just licensed and serviced completely differently — most Windows users will never see this SKU even though it's running the ATM they used this week.",
+    "links": {
+      "official_website": "https://learn.microsoft.com/en-us/windows/iot/",
+      "download": "https://www.microsoft.com/en-us/evalcenter/evaluate-windows-11-iot-enterprise-ltsc",
+      "documentation": "https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/overview",
+      "installation_guide": "https://www.microsoft.com/en-us/evalcenter/download-windows-11-iot-enterprise-ltsc-eval",
+      "release_notes": "https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/whats-new/release-history",
+      "source_repository": "Not applicable — closed source",
+      "checksums": "SHA256 verification steps provided on the evaluation download page",
+      "forums_community": "https://learn.microsoft.com/en-us/answers/tags/265/windows-iot",
+      "mirrors": "Not applicable — Microsoft-distributed only"
+    },
+    "related_os": [],
+    "predecessor": "Windows Embedded Industry / Windows Embedded Standard",
+    "successor": "",
+    "alternatives": [],
+    "last_verified": "2026-08 (Claude training + live web search during this build — verify before use)"
+  },
+  {
+    "id": "xenix",
+    "name": "Xenix",
+    "official_name": "Microsoft XENIX",
+    "tagline": "Before MS-DOS, before Windows — Microsoft's first operating system was a UNIX.",
+    "family": "UNIX (System V / BSD hybrid)",
+    "status": "ARCHIVED",
+    "status_note": "Historical only. Sold by Microsoft 1980–1987, then by SCO through 1991. No current official source, download, or support exists from Microsoft or any successor.",
+    "kernel": "Monolithic UNIX-derived kernel (based on AT&T UNIX Version 7, later System V and BSD elements)",
+    "foundation": "Originally Microsoft; later Santa Cruz Operation (SCO) from 1987",
+    "desktop_environments": [
+      "Command-line interface only"
+    ],
+    "package_manager": "None in the modern sense — period UNIX distribution tooling",
+    "filesystems": [
+      "UNIX-style filesystem (System V-derived)"
+    ],
+    "cpu_architectures": [
+      "x86 (8086/80286/80386)",
+      "PDP-11",
+      "Zilog Z8001",
+      "Motorola 68000"
+    ],
+    "hardware": {
+      "minimum": "Period 1980s microcomputer hardware",
+      "recommended": "Not applicable — no modern hardware target",
+      "laptop_suitability": "Not applicable",
+      "desktop_suitability": "Not applicable — historical curiosity only",
+      "old_pc_suitability": "Only via emulation of genuinely period-accurate hardware",
+      "server_suitability": "Not applicable today",
+      "gaming_suitability": "Not applicable",
+      "education_suitability": "Good as history: it explains why Microsoft's first commercial OS was UNIX, not DOS, and how that connects to the later OS/2 and Windows NT lineage",
+      "known_trouble": "No official installable image or license exists today; closed-source and proprietary, unlike MS-DOS which Microsoft partly open-sourced"
+    },
+    "privacy_security_notes": "Not applicable — predates any modern security model.",
+    "live_usb": "Not available",
+    "vm_support": "Some retrocomputing communities run surviving Xenix disk images under emulators (e.g. 86Box), but no official Microsoft or SCO-sanctioned distribution exists to point to",
+    "installation_difficulty": "Not applicable — no official source available",
+    "why_it_exists": "Microsoft licensed AT&T's Version 7 UNIX in 1979 and sold it as Xenix starting 1980, years before MS-DOS existed, aiming at the 16-bit microcomputer market — at one point Xenix was the most widely installed UNIX variant simply due to x86's popularity.",
+    "who_its_for": "Computing historians and retro-UNIX researchers; not something anyone can practically install today from an official source.",
+    "what_makes_it_different": "The forgotten fact that Microsoft's very first operating system product was a UNIX, not DOS or Windows — ownership passed to SCO in 1987 and it was folded into what became SCO UNIX / OpenServer.",
+    "links": {
+      "official_website": "Not available — Microsoft has no current official Xenix page",
+      "download": "Not available",
+      "documentation": "Not available from Microsoft; historical technical detail exists only in third-party retrocomputing archives",
+      "installation_guide": "Not available",
+      "release_notes": "Not applicable",
+      "source_repository": "Not available — remained closed source",
+      "checksums": "Not applicable",
+      "forums_community": "Not available",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "freebsd"
+    ],
+    "predecessor": "AT&T UNIX Version 7",
+    "successor": "SCO UNIX / SCO OpenServer",
+    "alternatives": [
+      "freebsd",
+      "openbsd"
+    ],
+    "last_verified": "2026-08 (Claude training + live web search during this build — verify before use)"
+  },
+  {
+    "id": "xubuntu",
+    "name": "Xubuntu",
+    "official_name": "Xubuntu",
+    "tagline": "A stable, light and configurable Linux operating system, with a focus on user-friendliness.",
+    "family": "Linux / Debian-Ubuntu family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Official Ubuntu flavor",
+    "desktop_environments": [
+      "Xfce"
+    ],
+    "package_manager": "APT (.deb)",
+    "filesystems": [
+      "ext4"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "~2GB RAM realistic",
+      "recommended": "4GB+ RAM",
+      "laptop_suitability": "Good",
+      "desktop_suitability": "Good — a well-balanced lightweight option",
+      "old_pc_suitability": "Good, though slightly heavier than Lubuntu/LXQt-based options",
+      "server_suitability": "Not a typical use case",
+      "gaming_suitability": "Moderate, same driver stack as Ubuntu",
+      "education_suitability": "Good, Xfce is a traditional, well-documented desktop metaphor",
+      "known_trouble": "None particular beyond standard Linux driver caveats"
+    },
+    "privacy_security_notes": "No telemetry by default.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy",
+    "why_it_exists": "An official Ubuntu flavor bringing the traditional, configurable Xfce desktop to Ubuntu's package base.",
+    "who_its_for": "Users wanting a traditional desktop layout with lighter resource use than full Ubuntu/GNOME.",
+    "what_makes_it_different": "Xfce's traditional, highly configurable desktop paired with official Ubuntu flavor status and support.",
+    "links": {
+      "official_website": "https://xubuntu.org/",
+      "download": "https://xubuntu.org/download/",
+      "documentation": "https://docs.xubuntu.org/",
+      "installation_guide": "https://docs.xubuntu.org/",
+      "release_notes": "https://xubuntu.org/news/",
+      "source_repository": "https://github.com/xubuntu",
+      "checksums": "SHA256SUMS on ubuntu.com download infrastructure",
+      "forums_community": "https://xubuntu.org/help/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "ubuntu",
+      "lubuntu"
+    ],
+    "predecessor": "ubuntu",
+    "successor": "",
+    "alternatives": [
+      "lubuntu",
+      "linux-mint"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  },
+  {
+    "id": "zorin-os",
+    "name": "Zorin OS",
+    "official_name": "Zorin OS",
+    "tagline": "The Windows and macOS alternative designed to make your computer faster, more powerful, secure and privacy-respecting.",
+    "family": "Linux / Debian-Ubuntu family",
+    "status": "ACTIVE",
+    "status_note": "",
+    "kernel": "Linux",
+    "foundation": "Zorin Group (commercial + free Core edition)",
+    "desktop_environments": [
+      "Custom GNOME-based, with layouts mimicking Windows/macOS"
+    ],
+    "package_manager": "APT (.deb) + Flatpak",
+    "filesystems": [
+      "ext4"
+    ],
+    "cpu_architectures": [
+      "x86_64"
+    ],
+    "hardware": {
+      "minimum": "~2GB RAM (Core), the 'Lite' edition targets much older machines",
+      "recommended": "4GB+ RAM for Core edition",
+      "laptop_suitability": "Good",
+      "desktop_suitability": "Excellent, specifically aimed at Windows switchers",
+      "old_pc_suitability": "Good — Zorin OS Lite (Xfce-based) targets older hardware specifically",
+      "server_suitability": "Not a typical use case",
+      "gaming_suitability": "Good, standard Ubuntu-based driver support",
+      "education_suitability": "Good — the interface layouts are explicitly designed to feel instantly familiar",
+      "known_trouble": "Some advanced desktop layout/theming features are paywalled in the paid 'Pro' edition versus the free 'Core' edition"
+    },
+    "privacy_security_notes": "No telemetry claimed for the OS itself; standard Ubuntu-based security update model.",
+    "live_usb": "Yes",
+    "vm_support": "Yes",
+    "installation_difficulty": "Easy — one of the most polished installers, explicitly aimed at non-technical switchers",
+    "why_it_exists": "Built specifically to ease the transition for Windows and macOS users by mimicking familiar desktop layouts on top of Ubuntu.",
+    "who_its_for": "Windows/macOS switchers who want the most familiar-feeling Linux desktop experience.",
+    "what_makes_it_different": "Desktop layout switcher that mimics Windows or macOS UI conventions out of the box, and a dedicated Lite edition for older PCs.",
+    "links": {
+      "official_website": "https://zorin.com/os/",
+      "download": "https://zorin.com/os/download/",
+      "documentation": "https://help.zorin.com/",
+      "installation_guide": "https://help.zorin.com/docs/getting-started/install-zorin-os/",
+      "release_notes": "Not verified",
+      "source_repository": "https://github.com/zorinos",
+      "checksums": "Provided via the official download/verification instructions",
+      "forums_community": "https://forum.zorin.com/",
+      "mirrors": "Not verified"
+    },
+    "related_os": [
+      "ubuntu"
+    ],
+    "predecessor": "ubuntu",
+    "successor": "",
+    "alternatives": [
+      "linux-mint",
+      "pop-os"
+    ],
+    "last_verified": "2026-01 (Claude training knowledge, not live-checked — verify before install)"
+  }
+]

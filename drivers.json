@@ -1,0 +1,125 @@
+[
+  {
+    "id": "intel-graphics",
+    "manufacturer": "Intel",
+    "device_category": "Graphics (integrated GPU)",
+    "linux_model": "Open-source, built into the kernel (i915/Xe drivers) — no separate install needed on modern kernels",
+    "bsd_model": "Open-source, built into FreeBSD/OpenBSD graphics stack via the same DRM code shared with Linux",
+    "windows_note": "Windows users get drivers directly from Intel",
+    "label": "Official OS Repository / Built into Kernel",
+    "resources": [
+      {"name": "Intel Linux Graphics documentation", "url": "https://www.intel.com/content/www/us/en/support/articles/000005520/graphics.html", "type": "Official Manufacturer"},
+      {"name": "Linux kernel DRM/i915 docs", "url": "https://docs.kernel.org/gpu/i915.html", "type": "Official Documentation"}
+    ],
+    "notes": "Almost never needs a manual driver install on Linux/BSD — comes with the kernel/Mesa. Very old or very new Intel GPUs occasionally need a newer kernel than a stable-branch distro ships."
+  },
+  {
+    "id": "amd-graphics",
+    "manufacturer": "AMD",
+    "device_category": "Graphics (Radeon GPUs, integrated and discrete)",
+    "linux_model": "Open-source AMDGPU driver, built into the kernel and Mesa; firmware blobs from linux-firmware package",
+    "bsd_model": "Supported via the same DRM/amdgpu code on FreeBSD (drm-kmod port)",
+    "windows_note": "Windows users get drivers directly from AMD",
+    "label": "Official OS Repository / Built into Kernel",
+    "resources": [
+      {"name": "AMD Linux driver information", "url": "https://www.amd.com/en/support/download/linux-drivers.html", "type": "Official Manufacturer"},
+      {"name": "Linux kernel AMDGPU docs", "url": "https://docs.kernel.org/gpu/amdgpu/index.html", "type": "Official Documentation"}
+    ],
+    "notes": "Open-source AMDGPU is generally excellent and preinstalled. Very recent GPU releases can need a newer kernel/Mesa than what a stable distro branch ships."
+  },
+  {
+    "id": "nvidia-graphics",
+    "manufacturer": "NVIDIA",
+    "device_category": "Graphics (GeForce/RTX GPUs)",
+    "linux_model": "Proprietary driver from NVIDIA (packaged by most distros) OR the open-source Nouveau driver (built into the kernel, less performant)",
+    "bsd_model": "FreeBSD packages an NVIDIA driver port; OpenBSD relies mainly on the open Nouveau driver with more limited support",
+    "windows_note": "Windows users get drivers directly from NVIDIA",
+    "label": "Official Manufacturer + Official OS Repository",
+    "resources": [
+      {"name": "NVIDIA official Linux driver downloads", "url": "https://www.nvidia.com/en-us/drivers/unix/", "type": "Official Manufacturer"},
+      {"name": "Nouveau open-source driver project", "url": "https://nouveau.freedesktop.org/", "type": "Community Resource"}
+    ],
+    "notes": "Distro package managers (e.g. Ubuntu's 'Additional Drivers', Pop!_OS's NVIDIA ISO, Fedora via RPM Fusion) are usually the easiest way to install the proprietary driver rather than NVIDIA's raw .run installer."
+  },
+  {
+    "id": "intel-wifi",
+    "manufacturer": "Intel",
+    "device_category": "Wi-Fi (Intel wireless chipsets)",
+    "linux_model": "Open-source iwlwifi kernel driver; requires proprietary firmware blobs from linux-firmware",
+    "bsd_model": "FreeBSD supports many Intel Wi-Fi chips via iwlwifi-compatible drivers/ports; OpenBSD has native iwm/iwn drivers",
+    "windows_note": "Windows users get drivers via Windows Update or Intel directly",
+    "label": "Built into Kernel + Firmware Package",
+    "resources": [
+      {"name": "Linux kernel iwlwifi documentation", "url": "https://wireless.docs.kernel.org/en/latest/en/users/drivers/iwlwifi.html", "type": "Official Documentation"},
+      {"name": "linux-firmware project (firmware blobs)", "url": "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git", "type": "Official OS Repository"}
+    ],
+    "notes": "Almost always works out of the box if the distro includes non-free firmware (some strictly-free distros like Guix exclude it by policy, which can leave Wi-Fi non-functional)."
+  },
+  {
+    "id": "realtek-wifi",
+    "manufacturer": "Realtek",
+    "device_category": "Wi-Fi (Realtek chipsets, common in budget laptops/USB adapters)",
+    "linux_model": "Mixed: some chips are in-kernel, many newer ones need out-of-tree community drivers",
+    "bsd_model": "Support is inconsistent; check the specific BSD's hardware compatibility list before relying on Realtek Wi-Fi",
+    "windows_note": "Windows users get drivers via Windows Update or Realtek directly",
+    "label": "Mixed: Built into Kernel / Community Resource",
+    "resources": [
+      {"name": "Realtek official Linux driver page", "url": "https://www.realtek.com/en/products/communications-network-ics/item/network-interface-controllers-wi-fi", "type": "Official Manufacturer"},
+      {"name": "lwfinger's Realtek driver repositories (community-maintained)", "url": "https://github.com/lwfinger", "type": "Community Resource"}
+    ],
+    "notes": "Realtek Wi-Fi is one of the most common sources of Linux hardware friction — always check a specific chipset model (e.g. RTL8821CE) against community driver repos before buying or installing."
+  },
+  {
+    "id": "broadcom-wifi",
+    "manufacturer": "Broadcom",
+    "device_category": "Wi-Fi (common in older MacBooks and some laptops)",
+    "linux_model": "The 'broadcom-sta' (wl) proprietary driver or open-source brcmfmac/brcmsmac, depending on chip generation",
+    "bsd_model": "FreeBSD has some Broadcom support via if_bwn; coverage varies by chip",
+    "windows_note": "Windows users get drivers via Windows Update or Broadcom/OEM directly",
+    "label": "Mixed: Official OS Repository / Community Resource",
+    "resources": [
+      {"name": "Linux kernel brcmfmac driver docs", "url": "https://wireless.docs.kernel.org/en/latest/en/users/drivers/brcm80211.html", "type": "Official Documentation"}
+    ],
+    "notes": "Ubuntu and Debian package the proprietary broadcom-sta driver in their 'restricted/non-free' repos for many older Broadcom chips."
+  },
+  {
+    "id": "mediatek-wifi",
+    "manufacturer": "MediaTek",
+    "device_category": "Wi-Fi (increasingly common in newer laptops)",
+    "linux_model": "Open-source mt76 driver family, built into the kernel for most current MediaTek Wi-Fi chips",
+    "bsd_model": "Support is limited and chip-dependent; check hardware notes carefully",
+    "windows_note": "Windows users get drivers via Windows Update or MediaTek/OEM directly",
+    "label": "Built into Kernel",
+    "resources": [
+      {"name": "Linux kernel mt76 driver project", "url": "https://wireless.docs.kernel.org/en/latest/en/users/drivers/mediatek.html", "type": "Official Documentation"}
+    ],
+    "notes": "Generally good support on recent kernels; very new MediaTek Wi-Fi 6E/7 chips can need a newer kernel than a stable-branch distro ships at first."
+  },
+  {
+    "id": "printers",
+    "manufacturer": "Various (HP, Canon, Epson, Brother)",
+    "device_category": "Printers",
+    "linux_model": "CUPS (Common Unix Printing System) with driverless IPP Everywhere support for most modern printers, plus manufacturer-supplied PPDs for older models",
+    "bsd_model": "CUPS is also the standard printing system on FreeBSD/OpenBSD",
+    "windows_note": "Windows users typically install a manufacturer driver package",
+    "label": "Official OS Repository (CUPS) + Official Manufacturer (older models)",
+    "resources": [
+      {"name": "CUPS project (OpenPrinting)", "url": "https://openprinting.github.io/", "type": "Official OS Repository"},
+      {"name": "HPLIP (HP Linux Imaging and Printing)", "url": "https://developers.hp.com/hp-linux-imaging-and-printing", "type": "Official Manufacturer"}
+    ],
+    "notes": "Most printers made in the last ~10 years work 'driverless' via IPP Everywhere/AirPrint standards with zero setup. Older or specialty printers may need a manufacturer-specific driver package."
+  },
+  {
+    "id": "bios-uefi-firmware",
+    "manufacturer": "Motherboard/PC manufacturers",
+    "device_category": "BIOS / UEFI firmware and updates",
+    "linux_model": "fwupd (LVFS — Linux Vendor Firmware Service) delivers many vendor firmware updates directly, when supported",
+    "bsd_model": "Not commonly integrated; firmware updates are typically done via manufacturer tools or a Windows/DOS boot",
+    "windows_note": "Most OEMs still primarily ship firmware update tools for Windows",
+    "label": "Official OS Repository (fwupd/LVFS) + Official Manufacturer",
+    "resources": [
+      {"name": "Linux Vendor Firmware Service (LVFS)", "url": "https://fwupd.org/", "type": "Official OS Repository"}
+    ],
+    "notes": "Not every motherboard/laptop vendor participates in LVFS — check whether your specific model is listed before relying on it; otherwise a manufacturer's own (often Windows-only) tool may be required."
+  }
+]
