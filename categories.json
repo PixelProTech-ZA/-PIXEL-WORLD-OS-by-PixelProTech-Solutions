@@ -1,0 +1,81 @@
+{
+  "old-pc": [
+    "alpine-linux",
+    "antix",
+    "freedos",
+    "gentoo",
+    "lubuntu",
+    "mx-linux",
+    "netbsd",
+    "puppy-linux",
+    "q4os",
+    "tiny-core",
+    "void-linux"
+  ],
+  "gaming": [
+    "arch-linux",
+    "batocera",
+    "bazzite",
+    "cachyos",
+    "endeavouros",
+    "manjaro",
+    "nobara",
+    "pop-os",
+    "steamos"
+  ],
+  "server": [
+    "alpine-linux",
+    "debian",
+    "freebsd",
+    "openbsd",
+    "openmediavault",
+    "pfsense-opnsense",
+    "proxmox-ve",
+    "truenas",
+    "ubuntu"
+  ],
+  "privacy": [
+    "kali-linux",
+    "openbsd",
+    "parrot-os",
+    "tails",
+    "whonix"
+  ],
+  "bsd": [
+    "freebsd",
+    "ghostbsd",
+    "netbsd",
+    "openbsd",
+    "pfsense-opnsense",
+    "truenas"
+  ],
+  "alternative": [
+    "freedos",
+    "haiku",
+    "reactos",
+    "redox-os",
+    "serenityos"
+  ],
+  "legacy": [
+    "ms-dos",
+    "xenix",
+    "singularity"
+  ],
+  "experimental": [
+    "reactos",
+    "redox-os",
+    "serenityos",
+    "singularity"
+  ],
+  "beginner": [
+    "fedora",
+    "kubuntu",
+    "linux-mint",
+    "lubuntu",
+    "pop-os",
+    "q4os",
+    "ubuntu",
+    "xubuntu",
+    "zorin-os"
+  ]
+}
