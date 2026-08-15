@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pixel World OS — There is more than one way to use a computer.</title>
+<meta name="description" content="A discovery laboratory for PC operating systems beyond the default. Built by PixelProTech Solutions." />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0B0D0C" />
+<link rel="icon" href="icon-192.png" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="offline-banner" id="offlineBanner">OFFLINE MODE — showing cached catalogue data. External links will not load until you're back online.</div>
+
+<div id="app">
+
+  <div class="topbar">
+    <div class="brand" data-route="home">
+      <span class="brand-mark"></span>
+      <div>
+        <div class="brand-title">PIXEL WORLD OS</div>
+        <div class="brand-sub">by PixelProTech Solutions</div>
+      </div>
+    </div>
+    <nav class="tabs" id="mainTabs">
+      <button data-route="home">HOME</button>
+      <button data-route="catalogue">CATALOGUE</button>
+      <button data-route="finder">FIND MY OS</button>
+      <button data-route="compare">COMPARE</button>
+      <button data-route="families">FAMILY TREE</button>
+      <button data-route="drivers">DRIVER LAB</button>
+      <button data-route="about">ABOUT</button>
+    </nav>
+  </div>
+
+  <main id="view"></main>
+
+  <footer>
+    <div class="foot-brand">PIXEL WORLD OS</div>
+    <div>Built and curated by <strong>PixelProTech Solutions</strong>.</div>
+    <p style="max-width:720px;">
+      PixelProTech Solutions does not own the third-party operating systems, software projects,
+      trademarks, logos, documentation or hardware brands referenced throughout this application.
+      World OS is an independent discovery and educational platform that shares publicly available
+      project information and official resources to help people learn, experiment and discover
+      alternatives in computing.
+    </p>
+    <div class="road">“We share the road. We don't own the roads.”</div>
+    <p style="max-width:720px;">
+      Official project links are provided wherever available. Users should verify licensing, system
+      requirements and installation instructions with the respective project or hardware manufacturer
+      before installation. Catalogue data was compiled from Claude's training knowledge and has not
+      been live-verified for this build — see the About page for the full honesty statement.
+    </p>
+    <div class="foot-links">
+      <a href="#" data-route="about">About PixelProTech</a>
+      <a href="#" data-route="about">Contact</a>
+      <a href="#" data-route="about">Privacy</a>
+      <a href="#" data-route="about">Terms</a>
+      <a href="#" data-route="about">Attribution</a>
+      <a href="#" data-route="report">Report Broken Link</a>
+    </div>
+  </footer>
+</div>
+
+<div id="modalRoot"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
