@@ -1,0 +1,113 @@
+{
+  "Linux / independent": [
+    "alpine-linux",
+    "nixos",
+    "tiny-core",
+    "void-linux"
+  ],
+  "Linux / Debian family": [
+    "antix",
+    "debian",
+    "devuan",
+    "kali-linux",
+    "parrot-os",
+    "q4os",
+    "tails",
+    "ubuntu"
+  ],
+  "Linux / Arch family": [
+    "arch-linux",
+    "artix-linux",
+    "cachyos",
+    "endeavouros",
+    "manjaro",
+    "steamos"
+  ],
+  "Linux / independent (retro-gaming appliance)": [
+    "batocera"
+  ],
+  "Linux / Fedora family (immutable)": [
+    "bazzite"
+  ],
+  "Linux / Red Hat family": [
+    "fedora"
+  ],
+  "BSD": [
+    "freebsd",
+    "ghostbsd",
+    "netbsd",
+    "openbsd"
+  ],
+  "DOS": [
+    "freedos",
+    "ms-dos"
+  ],
+  "Windows NT / Windows Embedded": [
+    "windows-iot-enterprise-ltsc"
+  ],
+  "UNIX / Microsoft-SCO": [
+    "xenix"
+  ],
+  "Research / language-based": [
+    "singularity"
+  ],
+  "Linux / Gentoo family": [
+    "gentoo"
+  ],
+  "Linux / GNU family": [
+    "guix-system"
+  ],
+  "Alternative / BeOS-inspired": [
+    "haiku"
+  ],
+  "Linux / Debian-Ubuntu family": [
+    "kubuntu",
+    "linux-mint",
+    "lubuntu",
+    "pop-os",
+    "xubuntu",
+    "zorin-os"
+  ],
+  "Linux / independent (media-center appliance)": [
+    "libreelec"
+  ],
+  "Linux / Debian family (with antiX/SysVinit heritage)": [
+    "mx-linux"
+  ],
+  "Linux / Fedora family": [
+    "nobara"
+  ],
+  "Linux / Debian family (NAS appliance)": [
+    "openmediavault"
+  ],
+  "Linux / SUSE family": [
+    "opensuse"
+  ],
+  "Linux / independent (embedded/router)": [
+    "openwrt"
+  ],
+  "BSD (FreeBSD-based firewall/router appliances)": [
+    "pfsense-opnsense"
+  ],
+  "Linux / Debian family (virtualization appliance)": [
+    "proxmox-ve"
+  ],
+  "Linux / independent (multiple builds/'puplets')": [
+    "puppy-linux"
+  ],
+  "Alternative / Windows-compatible": [
+    "reactos"
+  ],
+  "Alternative / hobby-research OS": [
+    "redox-os"
+  ],
+  "Alternative / hobby OS": [
+    "serenityos"
+  ],
+  "BSD (CORE) / Linux (SCALE)": [
+    "truenas"
+  ],
+  "Linux / Debian family (dual-VM design)": [
+    "whonix"
+  ]
+}
